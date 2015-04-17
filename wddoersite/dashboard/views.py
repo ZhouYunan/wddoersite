@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.db import models
+from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-# Create your views here.
+
+
+def login(request):
+    return HttpResponse('hello')
