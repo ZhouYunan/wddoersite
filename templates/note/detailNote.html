@@ -23,7 +23,7 @@
 
     <h2>{{ note.title }}</h2>
     <small>{{ note.pub_time }} <span style="color: #419641">{{ note.po_type }}</span></small>
-    <p>{{ note.content }}</p>
+    <div>{{ note.content }}</div>
 
     <!-- 多说评论框 start -->
     <div class="ds-thread" data-thread-key="{{ note.id }}" data-title="{{ note.title }}" data-url="{{ note.get_absolute_url }}"></div>
