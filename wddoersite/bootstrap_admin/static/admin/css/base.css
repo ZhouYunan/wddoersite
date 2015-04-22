@@ -93,7 +93,7 @@ body {
 /* Hide for mobile, show later */
 
 .sidebar-menu {
-  background-color: #393939;
+  background-color: #8D8D8D;
   bottom: 0;
   display: block;
   left: 0;
@@ -105,8 +105,8 @@ body {
   z-index: 1000;
 }
 .sidebar-menu .django-admin-logo {
-  background: #282829;
-  border-bottom: 1px solid #222;
+  background: #8D8D8D;
+  border-bottom: 1px solid #8D8D8D;
   color: #fff;
   display: block;
   height: 61px;
@@ -137,27 +137,27 @@ body {
   color: #fff;
 }
 .sidebar-menu .nav-sidebar a {
-  border-left: 2px solid #393939;
+  border-left: 2px solid #3C3C3C;
   color: #fff;
   height: 43px;
   padding: 12px 5px 12px 20px;
   transition: border 0.4s ease-in-out 0s, color 0.3s ease-in-out 0s, background-color 0.4s ease-in-out 0s;
 }
 .sidebar-menu .nav-sidebar a:hover {
-  background: #333;
+  background: #3C3C3C;
   color: #ccc;
-  border-color: #428bca;
+  border-color: #3C3C3C;
 }
 .sidebar-menu .nav-sidebar a.section {
   padding-left: 5px;
   text-transform: uppercase;
 }
 .sidebar-menu .nav-sidebar.has-active-menu {
-  background: #333;
+  background: rgba(0, 0, 0, 0.60);
   border: 1px solid #444;
 }
 .sidebar-menu .nav-sidebar.has-active-menu a {
-  border-left: 2px solid #333;
+  border-left: 2px solid rgba(0, 0, 0, 0.60);
 }
 .sidebar-menu .active a:after {
   border-bottom: 10px solid transparent;
@@ -172,8 +172,8 @@ body {
 }
 .sidebar-menu .nav-sidebar .active a {
   color: #428bca;
-  border-color: #333;
-  background-color: #333;
+  border-color: rgba(0, 0, 0, 0.60);
+  background-color: rgba(0, 0, 0, 0.60);
 }
 .sidebar-menu .nav-sidebar .active a:hover,
 .sidebar-menu .nav-sidebar.has-active-menu a:hover {
