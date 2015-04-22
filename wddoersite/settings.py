@@ -44,7 +44,7 @@ INSTALLED_APPS = (
 
     'wddoersite.blog',
 
-    'pagination_bootstrap',      #https://github.com/staticdev/django-pagination-bootstrap
+    'wddoersite.pagination_bootstrap',      #https://github.com/staticdev/django-pagination-bootstrap
 
     #'ckeditor',     #https://github.com/django-ckeditor/django-ckeditor
 
@@ -71,7 +71,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 
-    'pagination_bootstrap.middleware.PaginationMiddleware',
+    'wddoersite.pagination_bootstrap.middleware.PaginationMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
