@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=128)),
                 ('pub_time', models.DateTimeField(auto_now_add=True)),
                 ('content', models.TextField()),
-                ('po_type', models.ForeignKey(verbose_name=b'category', blank=True, to='note.Category', null=True)),
+                ('po_type', models.ForeignKey(verbose_name=b'category', blank=True, to='wddoersite.blog.Category', null=True)),
             ],
             options={
                 'ordering': ['-id'],

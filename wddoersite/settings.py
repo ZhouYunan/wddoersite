@@ -42,11 +42,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'wddoersite.note',
+    'wddoersite.blog',
 
     'pagination_bootstrap',      #https://github.com/tgdn/django-bootstrap-pagination
 
     #'ckeditor',     #https://github.com/django-ckeditor/django-ckeditor
+
+    'pagedown',      #https://github.com/timmyomahony/django-pagedown
 )
 
 from django.conf import global_settings
