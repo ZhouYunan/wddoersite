@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'wddoersite.blog',
-
     'wddoersite.pagination_bootstrap',      #https://github.com/staticdev/django-pagination-bootstrap
 
     #'ckeditor',     #https://github.com/django-ckeditor/django-ckeditor
@@ -53,6 +52,7 @@ INSTALLED_APPS = (
     'markdown_deux',    #https://github.com/trentm/django-markdown-deux
 )
 
+# For Sidebar Menu in Django 1.7 only (List of apps and models) (RECOMMENDED)
 from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
