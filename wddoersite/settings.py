@@ -44,7 +44,7 @@ INSTALLED_APPS = (
 
     'wddoersite.blog',
 
-    'pagination_bootstrap',      #https://github.com/tgdn/django-bootstrap-pagination
+    'pagination_bootstrap',      #https://github.com/staticdev/django-pagination-bootstrap
 
     #'ckeditor',     #https://github.com/django-ckeditor/django-ckeditor
 
