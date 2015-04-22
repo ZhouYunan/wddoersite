@@ -16,7 +16,7 @@ def about(request):
 
 class NoteIndexView(ListView):
     model = Note
-    template_name = 'blog/indexNote.html'
+    template_name = 'blog/indexBlog.html'
     context_object_name = 'notes'
 
     def get_context_data(self, **kwargs):

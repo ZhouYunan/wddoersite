@@ -48,7 +48,9 @@ INSTALLED_APPS = (
 
     #'ckeditor',     #https://github.com/django-ckeditor/django-ckeditor
 
-    'pagedown',      #https://github.com/timmyomahony/django-pagedown
+    'pagedown',      #https://github.com/timmyomahony/django-pagedown   &    http://www.oldrss.com/article/tech0001.html
+
+    'markdown_deux',    #https://github.com/trentm/django-markdown-deux
 )
 
 from django.conf import global_settings

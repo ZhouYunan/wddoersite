@@ -1,5 +1,6 @@
 from django.contrib import admin
 from models import Note, Category
+from forms import NoteForm
 
 
 
@@ -8,6 +9,8 @@ class NoteAdmin(admin.ModelAdmin):
     list_display_links = ('title', )
     list_filter = ('pub_time', 'po_type', )
     search_fields = ('title', )
+    form = NoteForm
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', )

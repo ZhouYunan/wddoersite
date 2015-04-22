@@ -7,7 +7,7 @@
 
 
 {% block navbar %}
-    <li><a href="{% url 'indexNote' %}">Note</a></li>
+    <li><a href="{% url 'indexBlog' %}">Blog</a></li>
     <li><a href="#">Book</a></li>
     <li><a href="{% url 'about' %}">About</a></li>
 {% endblock %}
@@ -16,7 +16,7 @@
 {% block content %}
     <br />
     {% for category in categories %}
-    <a href="/note/category/{{ category.id }}" style="text-decoration: none">
+    <a href="/blog/category/{{ category.id }}" style="text-decoration: none">
         <button class="btn btn-sm btn-info">{{ category.name }}
 {#            <sup style="color: #ffffff">{{ notes|length }}</sup>#}
         </button>
@@ -25,7 +25,7 @@
 
         {% autopaginate notes 5 %}
     {% for note in notes %}
-    <h2><a href="/note/{{ note.id }}/" style="text-decoration: none">{{ note.title }}</a></h2>
+    <h2><a href="/blog/note/{{ note.id }}/" style="text-decoration: none">{{ note.title }}</a></h2>
     <small>{{ note.pub_time }} <span style="color: #419641">{{ note.po_type }}</span></small>
     <p>{{ note.content | truncatechars:400 }}</p>
     {% endfor %}
