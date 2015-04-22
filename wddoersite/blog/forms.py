@@ -1,5 +1,5 @@
 from models import Note
-from pagedown.widgets import AdminPagedownWidget
+from wddoersite.pagedown.widgets import AdminPagedownWidget
 from django import forms
 
 

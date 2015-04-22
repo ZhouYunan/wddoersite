@@ -1,5 +1,5 @@
 {% extends "blog/base.html" %}
-{% load markdown_deux_tags %}
+{% load md2 %}
 
 
 {% block title_html %}
@@ -24,7 +24,7 @@
 
     <h2>{{ note.title }}</h2>
     <small>{{ note.pub_time }} <span style="color: #419641">{{ note.po_type }}</span></small>
-    <div>{{ note.content|markdown }}</div>
+    <div>{{ note.content | markdown:"safe, code-friendly, code-color" }}</div>
 
 
     <!-- 多说评论框 start -->

@@ -4,8 +4,8 @@ from django.forms.widgets import flatatt
 from django.utils.html import conditional_escape
 from django.template.loader import render_to_string
 
-from pagedown import settings as pagedown_settings
-from pagedown.utils import compatible_staticpath
+from wddoersite.pagedown import settings as pagedown_settings
+from wddoersite.pagedown.utils import compatible_staticpath
 
 
 try:

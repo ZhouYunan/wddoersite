@@ -49,7 +49,12 @@ INSTALLED_APPS = (
 
     'wddoersite.pagedown',      #https://github.com/timmyomahony/django-pagedown   &    http://www.oldrss.com/article/tech0001.html
 
-    'wddoersite.markdown_deux',    #https://github.com/trentm/django-markdown-deux
+    #'wddoersite.markdown_deux',    #https://github.com/trentm/django-markdown-deux
+
+    #'wddoersite._markerlib',     #https://github.com/trentm/python-markdown2
+
+    'django_markdown2'      #http://github.com/svetlyak40wt/django-markdown2
+
 )
 
 # For Sidebar Menu in Django 1.7 only (List of apps and models) (RECOMMENDED)
