@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'bootstrap_admin',      #https://github.com/django-admin-bootstrap/django-admin-bootstrap
+    'wddoersite.bootstrap_admin',      #https://github.com/django-admin-bootstrap/django-admin-bootstrap
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,9 +47,9 @@ INSTALLED_APPS = (
 
     #'ckeditor',     #https://github.com/django-ckeditor/django-ckeditor
 
-    'pagedown',      #https://github.com/timmyomahony/django-pagedown   &    http://www.oldrss.com/article/tech0001.html
+    'wddoersite.pagedown',      #https://github.com/timmyomahony/django-pagedown   &    http://www.oldrss.com/article/tech0001.html
 
-    'markdown_deux',    #https://github.com/trentm/django-markdown-deux
+    'wddoersite.markdown_deux',    #https://github.com/trentm/django-markdown-deux
 )
 
 # For Sidebar Menu in Django 1.7 only (List of apps and models) (RECOMMENDED)
