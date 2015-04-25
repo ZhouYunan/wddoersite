@@ -53,7 +53,7 @@ INSTALLED_APPS = (
 
     #'wddoersite._markerlib',     #https://github.com/trentm/python-markdown2
 
-    'django_markdown2'      #http://github.com/svetlyak40wt/django-markdown2
+    'wddoersite.django_markdown2'      #http://github.com/svetlyak40wt/django-markdown2
 
 )
 
