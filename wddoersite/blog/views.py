@@ -1,13 +1,18 @@
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from models import Note, Category
 from datetime import datetime
 
 
 
-def index(request):
-    return render(request, 'blog/index.html', {'current_time': datetime.now()})
+class IndexView(TemplateView):
+    template_name = 'blog/index.html'
+
+    def get_context_data(self, **kwargs):       #return a dictionary representing the template context
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['current_time'] = datetime.now()
+        return context
 
 
 def about(request):
