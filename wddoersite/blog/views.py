@@ -6,6 +6,9 @@ from datetime import datetime
 
 
 
+# def index(request):
+#     return render(request, 'blog/index.html', {'current_time': datetime.now()})
+
 class IndexView(TemplateView):
     template_name = 'blog/index.html'
 
