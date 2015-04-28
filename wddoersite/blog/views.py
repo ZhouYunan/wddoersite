@@ -18,8 +18,11 @@ class IndexView(TemplateView):
         return context
 
 
-def about(request):
-    return render(request, 'blog/about.html')
+# def about(request):
+#     return render(request, 'blog/about.html')
+
+class AboutView(TemplateView):
+    template_name = 'blog/about.html'
 
 
 class NoteIndexView(ListView):
