@@ -12,7 +12,7 @@ from datetime import datetime
 class IndexView(TemplateView):
     template_name = 'blog/index.html'
 
-    def get_context_data(self, **kwargs):       #return a dictionary representing the template context
+    def get_context_data(self, **kwargs):       #return a dictionary representing the template context, defined in class ContextMixin
         context = super(IndexView, self).get_context_data(**kwargs)
         context['current_time'] = datetime.now()
         return context
@@ -57,3 +57,5 @@ def categoryIndex(request, pk):
         },
         context_instance=RequestContext(request)
     )
+
+
