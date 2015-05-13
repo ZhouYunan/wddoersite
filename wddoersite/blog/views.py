@@ -57,5 +57,3 @@ def categoryIndex(request, pk):
         },
         context_instance=RequestContext(request)
     )
-
-

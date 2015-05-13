@@ -5,4 +5,4 @@
 *.pyc
 *.db
 
-local_settings.py
+#local_settings.py
