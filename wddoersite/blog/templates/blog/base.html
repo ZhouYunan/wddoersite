@@ -9,8 +9,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap-theme.min.css' %}">
     <!-- https://github.com/icco/pygments-css % http://my.oschina.net/GivingOnenessDestiny/blog/144625 -->
-    <link rel="stylesheet" href="{% static 'blog/css/code.css' %}">
-    <!-- defined by myself -->
+    <link rel="stylesheet" href="{% static 'blog/css/wddoer_code.css' %}">
+    <!-- base template file -->
     <link rel="stylesheet" href="{% static 'blog/css/base.css' %}">
     <title>
         {% block title_html %}
@@ -18,7 +18,7 @@
     </title>
 </head>
 
-<body>
+<body onload="ShowTime()">
     <div class="container-fluid">
         <div class="row">
             <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -71,5 +71,7 @@
     <script src="{% static 'blog/js/jquery-1.11.2.min.js' %}"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <!-- my js file defined by wddoer -->
+    <script src="{% static 'blog/js/wddoer_time.js' %}"></script>
 </body>
 </html>

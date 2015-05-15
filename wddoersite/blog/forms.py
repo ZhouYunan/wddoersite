@@ -9,4 +9,4 @@ class NoteForm(forms.ModelForm):
 
     class Meta:
         model = Note
-        fields = ('title', 'po_type', 'content')
+        fields = ('title', 'category', 'content')
