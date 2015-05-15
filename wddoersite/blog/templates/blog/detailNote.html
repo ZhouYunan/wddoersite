@@ -23,7 +23,7 @@
     {% endfor %}
 
     <h2>{{ note.title }}</h2>
-    <small>{{ note.pub_time }} <span style="color: #419641">{{ note.po_type }}</span></small>
+    <small>{{ note.created_time }} <span style="color: #419641">{{ note.category }}</span></small>
     <div>{{ note.content | markdown:"safe, code-friendly, code-color" }}</div>
 
 

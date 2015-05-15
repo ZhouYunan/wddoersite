@@ -12,7 +12,7 @@ class Category(models.Model):
 
 class Note(models.Model):
     title = models.CharField(max_length=128, verbose_name='文章名')
-    created_time = models.DateTimeField(auto_now_add=True)
+    created_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     category = models.ForeignKey(Category, verbose_name='分类', blank=True, null=True)
     content = models.TextField(verbose_name='笔记正文')
 
