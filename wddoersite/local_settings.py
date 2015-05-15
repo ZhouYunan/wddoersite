@@ -14,7 +14,7 @@ TIME_ZONE = 'Asia/Shanghai'
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',     # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'wddoersitedb',
         'USER': 'postgres',
         'PASSWORD': '1239',
@@ -28,7 +28,8 @@ import os
 BASE_DIR = 'D:/work/wddoersite'
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
+    os.path.join(BASE_DIR, 'wddoersite/blog/templates').replace('\\', '/'),
+    'blog/templates',
 )
 
 #STATIC_URL = BASE_DIR + '/static/'
@@ -40,8 +41,8 @@ STATICFILES_DIRS = (
     # ("fonts", os.path.join(BASE_DIR, '../wddoersite/static')),
     # ("js", os.path.join(BASE_DIR, '../wddoersite/static')),
     # ("media", os.path.join(BASE_DIR, '../wddoersite/static')),
-    os.path.join(BASE_DIR, 'static').replace('\\', '/'),
-    'static',
+    os.path.join(BASE_DIR, 'wddoersite/blog/static').replace('\\', '/'),
+    'blog/static',
 )
 
 
