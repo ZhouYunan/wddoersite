@@ -14,7 +14,7 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):       #return a dictionary representing the template context, defined in class ContextMixin
         context = super(IndexView, self).get_context_data(**kwargs)
-        context['current_time'] = datetime.now()
+        context['visited_time'] = datetime.now()
         return context
 
 
