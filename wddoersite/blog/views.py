@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.views.generic import ListView, DetailView, TemplateView
 from models import Note, Category
@@ -46,13 +46,27 @@ class NoteDetailView(DetailView):
         return context
 
 
+# class CategoryIndexView(ListView):
+#     model = Note
+#     template_name = 'blog/indexCategory.html'
+
+#     def get_context_data(self, **kwargs):
+#         context = super(CategoryIndexView, self).get_context_data(**kwargs)
+#         by_category = Category.objects.filter(name='category.name')
+#         context['notes'] = Note.objects.filter(category__in=by_category)
+#         context['categories'] = Category.objects.all()
+#         # context['category_name'] = Category.objects.get(id=temp_id).name
+#         return context
+
+
+
 def categoryIndex(request, pk):
     cate = Category.objects.get(pk=pk)
     notes = cate.note_set.all()
     return render_to_response('blog/indexCategory.html',
         {
             'notes': notes,
-            'cate_name': cate.name,
+            'category_name': cate.name,
             'categories': Category.objects.all()
         },
         context_instance=RequestContext(request)
