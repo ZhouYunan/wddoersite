@@ -5,6 +5,8 @@
 # ALLOWED_HOSTS = ['*']
 
 
+from pytz import *
+
 
 LANGUAGE_CODE = 'en-us'
 

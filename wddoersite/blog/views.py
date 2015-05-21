@@ -1,6 +1,7 @@
-from django.shortcuts import render, render_to_response, get_object_or_404
+# coding:utf-8
+from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.views.generic import ListView, DetailView, TemplateView, MonthArchiveView, YearArchiveView
+from django.views.generic import ListView, DetailView, TemplateView
 from models import Note, Category
 from datetime import datetime
 
@@ -25,7 +26,11 @@ class BlogIndexView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(BlogIndexView, self).get_context_data(**kwargs)
+
         context['categories'] = Category.objects.all()
+
+        blog_archive = Note.objects.all()
+
         return context
 
 

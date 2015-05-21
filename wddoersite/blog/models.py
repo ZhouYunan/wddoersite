@@ -1,20 +1,24 @@
 # coding:utf-8
+import datetime
 from django.db import models
 
 
 
 class Category(models.Model):
     name = models.CharField(max_length=64)
+    created_date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    is_removed = models.BooleanField(verbose_name="是否移除", default=False)
 
     def __unicode__(self):
         return self.name
 
 
 class Note(models.Model):
-    title = models.CharField(max_length=128, verbose_name='文章名')
-    created_date = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
-    category = models.ForeignKey(Category, verbose_name='分类', blank=True, null=True)
-    content = models.TextField(verbose_name='笔记正文')
+    title = models.CharField(max_length=128, verbose_name="文章名")
+    category = models.ForeignKey(Category, verbose_name="分类", blank=True, null=True)
+    content = models.TextField(verbose_name="笔记正文")
+    created_date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    is_removed = models.BooleanField(verbose_name="是否移除", default=False)
 
     class Meta:
         ordering = ['-id']
