@@ -18,23 +18,23 @@ class AboutView(TemplateView):
     template_name = 'blog/about.html'
 
 
-class NoteIndexView(ListView):
+class BlogIndexView(ListView):
     model = Note
     template_name = 'blog/index_blog.html'
     context_object_name = 'notes'
 
     def get_context_data(self, **kwargs):
-        context = super(NoteIndexView, self).get_context_data(**kwargs)
+        context = super(BlogIndexView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
 
 
-class NoteDetailView(DetailView):
+class BlogDetailView(DetailView):
     model = Note
     template_name = 'blog/detail_blog.html'
 
     def get_context_data(self, **kwargs):
-        context = super(NoteDetailView, self).get_context_data(**kwargs)
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
 
