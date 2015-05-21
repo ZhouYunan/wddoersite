@@ -22,12 +22,13 @@ class AboutView(TemplateView):
 class BlogIndexView(ListView):
     model = Note
     template_name = 'blog/blog_index.html'
-    context_object_name = 'notes'
+    # context_object_name = 'notes'
 
     def get_context_data(self, **kwargs):
         context = super(BlogIndexView, self).get_context_data(**kwargs)
 
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(is_displayed=True)
+        context['notes'] = Note.objects.filter(is_displayed=True, category__is_displayed=True)
 
         blog_archive = Note.objects.all()
 
@@ -40,18 +41,18 @@ class BlogDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
+        context['categories'] = Category.objects.filter(is_displayed=True)
         return context
 
 
 def categoryIndex(request, pk):
     cate = Category.objects.get(pk=pk)
-    notes = cate.note_set.all()
+    notes = cate.note_set.filter(is_displayed=True, category__is_displayed=True)
     return render_to_response('blog/category_index.html',
         {
             'notes': notes,
             'category_name': cate.name,
-            'categories': Category.objects.all()
+            'categories': Category.objects.filter(is_displayed=True)
         },
         context_instance=RequestContext(request)
     )

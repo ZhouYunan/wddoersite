@@ -1,13 +1,11 @@
 # coding:utf-8
-import datetime
 from django.db import models
-
 
 
 class Category(models.Model):
     name = models.CharField(max_length=64)
     created_date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
-    is_removed = models.BooleanField(verbose_name="是否移除", default=False)
+    is_displayed = models.BooleanField(verbose_name="是否显示")
 
     def __unicode__(self):
         return self.name
@@ -18,7 +16,7 @@ class Note(models.Model):
     category = models.ForeignKey(Category, verbose_name="分类", blank=True, null=True)
     content = models.TextField(verbose_name="笔记正文")
     created_date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
-    is_removed = models.BooleanField(verbose_name="是否移除", default=False)
+    is_displayed = models.BooleanField(verbose_name="是否显示")
 
     class Meta:
         ordering = ['-id']
