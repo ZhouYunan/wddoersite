@@ -12,6 +12,5 @@ urlpatterns = [
 
     url(r'', include('wddoersite.blog.urls')),
 
-    url(r'dashboard/', include('wddoersite.dashboard.urls')),
 
 ]
