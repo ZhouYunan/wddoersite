@@ -5,9 +5,6 @@
 # ALLOWED_HOSTS = ['*']
 
 
-from pytz import *
-
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Shanghai'
@@ -19,7 +16,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',     # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'wddoersitedb',
         'USER': 'root',
-        'PASSWORD': 'passwd',
+        'PASSWORD': '1239',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'default-character-set': 'utf-8',

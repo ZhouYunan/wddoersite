@@ -22,15 +22,12 @@ class AboutView(TemplateView):
 class BlogIndexView(ListView):
     model = Note
     template_name = 'blog/blog_index.html'
-    # context_object_name = 'notes'
 
     def get_context_data(self, **kwargs):
         context = super(BlogIndexView, self).get_context_data(**kwargs)
 
         context['categories'] = Category.objects.filter(is_displayed=True)
         context['notes'] = Note.objects.filter(is_displayed=True, category__is_displayed=True)
-
-        blog_archive = Note.objects.all()
 
         return context
 
