@@ -5,9 +5,9 @@ from forms import NoteForm
 
 
 class NoteAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'created_time', )
+    list_display = ('title', 'category', 'created_date', )
     list_display_links = ('title', )
-    list_filter = ('created_time', 'category', )
+    list_filter = ('created_date', 'category', )
     search_fields = ('title', )
     form = NoteForm
 

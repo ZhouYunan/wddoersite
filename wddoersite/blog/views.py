@@ -1,25 +1,18 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.template import RequestContext
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView, TemplateView, MonthArchiveView, YearArchiveView
 from models import Note, Category
 from datetime import datetime
 
 
-
-# def index(request):
-#     return render(request, 'blog/index.html', {'current_time': datetime.now()})
-
 class IndexView(TemplateView):
     template_name = 'blog/index.html'
 
-    def get_context_data(self, **kwargs):       #return a dictionary representing the template context, defined in class ContextMixin
+    def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['visited_time'] = datetime.now()
         return context
 
-
-# def about(request):
-#     return render(request, 'blog/about.html')
 
 class AboutView(TemplateView):
     template_name = 'blog/about.html'
@@ -27,7 +20,7 @@ class AboutView(TemplateView):
 
 class NoteIndexView(ListView):
     model = Note
-    template_name = 'blog/indexBlog.html'
+    template_name = 'blog/index_blog.html'
     context_object_name = 'notes'
 
     def get_context_data(self, **kwargs):
@@ -38,7 +31,7 @@ class NoteIndexView(ListView):
 
 class NoteDetailView(DetailView):
     model = Note
-    template_name = 'blog/detailNote.html'
+    template_name = 'blog/detail_blog.html'
 
     def get_context_data(self, **kwargs):
         context = super(NoteDetailView, self).get_context_data(**kwargs)
@@ -46,24 +39,10 @@ class NoteDetailView(DetailView):
         return context
 
 
-# class CategoryIndexView(ListView):
-#     model = Note
-#     template_name = 'blog/indexCategory.html'
-
-#     def get_context_data(self, **kwargs):
-#         context = super(CategoryIndexView, self).get_context_data(**kwargs)
-#         by_category = Category.objects.filter(name='category.name')
-#         context['notes'] = Note.objects.filter(category__in=by_category)
-#         context['categories'] = Category.objects.all()
-#         # context['category_name'] = Category.objects.get(id=temp_id).name
-#         return context
-
-
-
 def categoryIndex(request, pk):
     cate = Category.objects.get(pk=pk)
     notes = cate.note_set.all()
-    return render_to_response('blog/indexCategory.html',
+    return render_to_response('blog/index_category.html',
         {
             'notes': notes,
             'category_name': cate.name,
