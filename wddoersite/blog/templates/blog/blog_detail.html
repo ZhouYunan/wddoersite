@@ -17,7 +17,7 @@
 {% block content %}
     <br />
     {% for category in categories %}
-    <a href="/blog/category/{{ category.id }}" style="text-decoration: none">
+    <a href="{% url "index_category" category.id %}" style="text-decoration: none">
         <button class="btn btn-sm btn-info">{{ category.name }}</button>
     </a>
     {% endfor %}
