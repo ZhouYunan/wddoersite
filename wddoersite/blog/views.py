@@ -62,3 +62,8 @@ class NoteYearArchiveView(YearArchiveView):
     make_object_list = True
     allow_future = True
     model = Note
+
+    def get_context_data(self, **kwargs):
+        context = super(NoteYearArchiveView, self).get_context_data(**kwargs)
+        context['amount_notes'] = self.queryset.count()
+        return context
