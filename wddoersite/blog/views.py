@@ -57,9 +57,8 @@ def categoryIndex(request, pk):
 
 class NoteYearArchiveView(YearArchiveView):
     template_name = "blog/blog_archive_year.html"
-    queryset = Note.objects.all()
+    queryset = Note.objects.filter(is_displayed=True, category__is_displayed=True)
     date_field = "created_date"
     make_object_list = True
     allow_future = True
     model = Note
-    context_object_name = "notes"

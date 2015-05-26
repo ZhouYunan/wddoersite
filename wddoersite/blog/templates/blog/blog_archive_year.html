@@ -15,18 +15,12 @@
 
 {% block content %}
     <br />
-    {% for category in categories %}
-    <a href="{% url "category_index" category.id %}" style="text-decoration: none">
-        <button class="btn btn-sm btn-info">{{ category.name }}
-        </button>
-    </a>
+    {% for note in note_list %}
+        <h4>
+            <small>{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+            <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
+        </h4>
     {% endfor %}
 
-    {% for note in notes %}
-        <h3><a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a></h3>
-        <small>{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
-    {% endfor %}
-
-    <li><a href="/blog/2014">2014</a></li>
-    <li><a href="/blog/2015">2015</a></li>
+    <a href="/blog/2015"  style="text-decoration: none"><button class="btn btn-sm btn-success">2015</button></a>
 {% endblock %}
