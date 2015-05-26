@@ -25,7 +25,7 @@ DATABASES = {
 
 import os
 
-BASE_DIR = 'D:/work/wddoersite'
+BASE_DIR = 'D:/webprojects/wddoersite'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'wddoersite/blog/templates').replace('\\', '/'),

@@ -22,14 +22,10 @@
     </a>
     {% endfor %}
 
-    {% autopaginate notes 5 %}
-        {% for note in notes %}
-            <h2><a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a></h2>
-            <small>{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
-            <p>{{ note.content | truncatechars:400 }} }}</p>
-        {% endfor %}
-    {% paginate %}
-
+    {% for note in notes %}
+        <h3><a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a></h3>
+        <small>{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+    {% endfor %}
 
     <li><a href="/blog/2014">2014</a></li>
     <li><a href="/blog/2015">2015</a></li>

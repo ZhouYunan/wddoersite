@@ -1,7 +1,7 @@
 # coding:utf-8
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView, TemplateView, YearArchiveView
 from models import Note, Category
 from datetime import datetime
 
@@ -53,3 +53,13 @@ def categoryIndex(request, pk):
         },
         context_instance=RequestContext(request)
     )
+
+
+class NoteYearArchiveView(YearArchiveView):
+    template_name = "blog/blog_archive_year.html"
+    queryset = Note.objects.all()
+    date_field = "created_date"
+    make_object_list = True
+    allow_future = True
+    model = Note
+    context_object_name = "notes"

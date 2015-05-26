@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'blog/$', views.BlogIndexView.as_view(), name="blog_index"),
     url(r'^blog/note/(?P<pk>\d+)/$', views.BlogDetailView.as_view(), name="blog_detail"),
     url(r'^blog/category/(?P<pk>\d+)/$', views.categoryIndex, name="category_index"),
+    url(r'^blog/(?P<year>[0-9]{4})/$', views.NoteYearArchiveView.as_view(), name="blog_year_archive"),
 ]
