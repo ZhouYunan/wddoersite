@@ -1,0 +1,28 @@
+#menu {
+    background: #191818;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    overflow-y: auto;
+}
+
+.pure-menu-heading {
+    text-transform: uppercase;
+    color: #f9f9f9;
+}
+
+.pure-menu {
+
+}
+
+.pure-menu-active > .pure-menu-link,
+.pure-menu-link:hover,
+.pure-menu-link:focus {
+    background-color: #129FEA;
+    color: #f9f9f9;
+}
+
+#main {
+    margin-left: 160px;
+}

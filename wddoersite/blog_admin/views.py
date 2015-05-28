@@ -5,7 +5,7 @@ from forms import CategoryCreateForm
 
 
 class WddoerAdminView(TemplateView):
-    template_name = 'blog_admin/wddoer_admin_index.html'
+    template_name = 'blog_admin/blog_admin_index.html'
 
     def get_context_data(self, **kwargs):
         context = super(WddoerAdminView, self).get_context_data(**kwargs)

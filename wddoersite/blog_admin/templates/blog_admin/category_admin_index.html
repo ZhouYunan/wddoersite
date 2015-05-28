@@ -7,41 +7,39 @@
 
 
 {% block navbar %}
-    <li class="active"><a href="{% url 'category_admin_index' %}">Category</a></li>
-    <li><a href="#">Note</a></li>
-    <li><a href="#">待定</a></li>
+    <li class="pure-menu-item pure-menu-active"><a href="{% url 'category_admin_index' %}" class="pure-menu-link">Category</a></li>
+    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Note</a></li>
+    <li class="pure-menu-item"><a href="#" class="pure-menu-link">待定</a></li>
 {% endblock %}
 
 
 {% block content %}
     <br />
-    <div class="container">
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>分类ID</th>
+                    <th>分类名称</th>
+                    <th>是否展示</th>
+                    <th>创建时间</th>
+                    <th>编辑</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cate in category_list %}
                     <tr>
-                        <th>序号</th>
-                        <th>分类ID</th>
-                        <th>分类名称</th>
-                        <th>是否展示</th>
-                        <th>创建时间</th>
-                        <th>编辑</th>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ cate.id }}</td>
+                        <td>{{ cate.name }}</td>
+                        <td>{{ cate.is_displayed }}</td>
+                        <td>{{ cate.created_date|date:"Y-m-d h:m:s" }}</td>
+                        <td><a href="#">xxx</a></td>
                     </tr>
-                </thead>
-                <tbody>
-                    {% for cate in category_list %}
-                        <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ cate.id }}</td>
-                            <td>{{ cate.name }}</td>
-                            <td>{{ cate.is_displayed }}</td>
-                            <td>{{ cate.created_date|date:"Y-m-d h:m:s" }}</td>
-                            <td><a href="#">sss</a></td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
 {% endblock %}
