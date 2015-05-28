@@ -2,6 +2,7 @@
 from django.views.generic import ListView, TemplateView, CreateView
 from wddoersite.blog.models import Note, Category
 from forms import CategoryCreateForm
+from django.core.urlresolvers import reverse
 
 
 class WddoerAdminView(TemplateView):
@@ -22,7 +23,6 @@ class CategoryAdminView(ListView):
 class CategoryCreateView(CreateView):
     template_name = 'blog_admin/category_create.html'
     form_class = CategoryCreateForm
-    success_url = ''
 
     def get_success_url(self):
-        return self.success_url
+        return reverse('category_admin_index')
