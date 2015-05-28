@@ -2,7 +2,7 @@
 
 
 {% block title_html %}
-    wdsite
+    wddoersite
 {% endblock %}
 
 
@@ -18,8 +18,8 @@
         <h1>Welcome</h1>
         <p>this is wddoer's site, powered by django1.8, bootstrap3 and markdown</p>
         <p><a class="btn btn-primary btn-lg" href="{% url 'blog_index' %}" role="button">Jump To Blog</a></p>
-        <p><a class="btn btn-primary btn-lg" href="/admin/" role="button">Jump To Admin</a></p>
-        <p><a class="btn btn-primary btn-lg" href="/wddoer_admin/" role="button">Jump To WDDOER_Admin</a></p>
+        <p><a class="btn btn-primary btn-lg" href="/admin/" role="button">Jump To Default Admin</a></p>
+        <p><a class="btn btn-primary btn-lg" href="/blog_admin/" role="button">Jump To WDDOER_Admin</a></p>
         <p>访问时间：{{ visited_time }}</p>
         <div id="nowtime"></div>
     </div>

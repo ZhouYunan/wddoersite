@@ -12,5 +12,6 @@ urlpatterns = [
 
     url(r'', include('wddoersite.blog.urls')),
 
+    url(r'^blog_admin/', include('wddoersite.blog_admin.urls')),
 
 ]

@@ -6,7 +6,6 @@ from django.template import RequestContext
 from django.views.generic import ListView, DetailView, TemplateView, YearArchiveView, CreateView
 from models import Note, Category
 from datetime import datetime
-from wddoersite.blog.forms import CategoryCreateForm
 
 
 class IndexView(TemplateView):
@@ -70,22 +69,3 @@ class NoteYearArchiveView(YearArchiveView):
         context = super(NoteYearArchiveView, self).get_context_data(**kwargs)
         context['amount_notes'] = self.queryset.count()
         return context
-
-
-class WddoerAdminView(TemplateView):
-    template_name = 'blog_admin/wddoer_admin_index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(WddoerAdminView, self).get_context_data(**kwargs)
-        context['amount_category'] = Category.objects.all().count()
-        context['amount_note'] = Note.objects.all().count()
-        return context
-
-
-class CategoryCreateView(CreateView):
-    template_name = 'blog_admin/category_create.html'
-    form_class = CategoryCreateForm
-    success_url = ''
-
-    def get_success_url(self):
-        return self.success_url
