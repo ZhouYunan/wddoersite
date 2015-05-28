@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+
+
+{% block title_html %}
+    wdsite
+{% endblock %}
+
+
+{% block navbar %}
+    <li><a href="#">Category</a></li>
+    <li><a href="#">Note</a></li>
+    <li><a href="#">待定</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Create" />
+        </form>
+    </div>
+{% endblock %}

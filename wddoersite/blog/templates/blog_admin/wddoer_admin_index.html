@@ -1,0 +1,22 @@
+{% extends "blog_admin/base.html" %}
+
+
+{% block title_html %}
+    wdsite
+{% endblock %}
+
+
+{% block navbar %}
+    <li><a href="#">Category</a></li>
+    <li><a href="#">Note</a></li>
+    <li><a href="#">待定</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <br />
+    <div>
+        <p>文章：{{ amount_note }}篇</p>
+        <p>文章分类：{{ amount_category }}种</p>
+    </div>
+{% endblock %}
