@@ -17,7 +17,7 @@ class WddoerAdminView(TemplateView):
 
 class CategoryAdminView(ListView):
     template_name = 'blog_admin/category_admin_index.html'
-    model = Category
+    model = Category        #不要用queryset = Category.objects.all(),否则会导致http://code.google.com/p/django-endless-pagination/issues/detail?id=22
 
     def get_context_data(self, **kwargs):
         context = super(CategoryAdminView, self).get_context_data(**kwargs)
@@ -25,7 +25,7 @@ class CategoryAdminView(ListView):
         categories = Category.objects.all()
         notes_of_category = {}
 
-        for cate in categories:
+        for cate in categories:         #接上一个注释，不能用self.queryset代替categories
             key = cate.id
             notes_of_category[key] = Note.objects.filter(category_id=key).count()
         context['notes_of_category'] = notes_of_category
