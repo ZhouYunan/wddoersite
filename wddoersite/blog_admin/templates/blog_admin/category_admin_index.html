@@ -1,4 +1,5 @@
 {% extends "blog_admin/base.html" %}
+{% load filter %}
 
 
 {% block blog_admin %}
@@ -18,8 +19,6 @@
     <div class="pure-g">
         <div class="pure-u-1-5"><a href="{% url 'category_admin_index' %}">当前分类</a></div>
         <div class="pure-u-1-5"><a href="{% url 'category_create' %}">新增分类</a></div>
-        <div class="pure-u-1-5"><a href="">更新分类</a></div>
-        <div class="pure-u-1-5"><a href="">移除分类</a></div>
     </div>
     <hr />
     <div>
@@ -30,6 +29,7 @@
                     <th>分类ID</th>
                     <th>分类名称</th>
                     <th>是否展示</th>
+                    <th>Note数</th>
                     <th>创建时间</th>
                 </tr>
             </thead>
@@ -37,14 +37,19 @@
                 {% for cate in category_list %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ cate.id }}</td>
+                        <td><a href="{% url 'category_update' cate.id %}">{{ cate.id }}</a></td>
                         <td>{{ cate.name }}</td>
                         <td>{{ cate.is_displayed }}</td>
+                        <td>{{ notes_of_category|get_value:cate.id }}篇</td>
                         <td>{{ cate.created_date|date:"Y-m-d h:m:s" }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    <hr />
+    <div>
+        <p>注1：点击分类ID修改对应的分类名称</p>
     </div>
 
 {% endblock %}
