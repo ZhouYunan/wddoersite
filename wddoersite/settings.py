@@ -59,11 +59,6 @@ INSTALLED_APPS = (
 
 )
 
-# For Sidebar Menu in Django 1.7 only (List of apps and models) (RECOMMENDED)
-from django.conf import global_settings
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request',
-)
 
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
@@ -82,11 +77,18 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
-    "django.core.context_processors.request",
+)
+
+# For Sidebar Menu in Django 1.7 only (List of apps and models) (RECOMMENDED)
+
+from django.conf import global_settings
+TEMPLATE_CONTEXT_PROCESSORS += global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
 )
 
 ROOT_URLCONF = 'wddoersite.urls'

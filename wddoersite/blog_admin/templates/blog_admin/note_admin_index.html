@@ -31,6 +31,7 @@
                     <th>正文</th>
                     <th>创建时间</th>
                     <th>是否显示</th>
+                    <th>是否删除</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +44,7 @@
                         <td>{{ note.content|truncatechars:66 }}</td>
                         <td>{{ note.created_date|date:"Y-m-d h:m:s" }}</td>
                         <td>{{ note.is_displayed }}</td>
+                        <td><a href="{% url 'note_delete' note.id %}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -50,7 +52,8 @@
     </div>
     <hr />
     <div>
-        <p>注1：点击文章ID修改相应的文章详情</p>
+        <p>注1：点击<strong>文章ID</strong>修改相应的文章详情</p>
+        <p>注2：点击<strong>是否删除</strong>可从数据库彻底删除数据</p>
     </div>
 
 {% endblock %}

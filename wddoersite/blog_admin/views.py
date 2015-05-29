@@ -1,8 +1,8 @@
 # coding:utf-8
-from django.views.generic import ListView, TemplateView, CreateView, UpdateView
+from django.views.generic import ListView, TemplateView, CreateView, UpdateView, DeleteView
 from wddoersite.blog.models import Note, Category
 from forms import CategoryCreateForm, NoteCreateForm
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 
 
 class WddoerAdminView(TemplateView):
@@ -17,15 +17,19 @@ class WddoerAdminView(TemplateView):
 
 class CategoryAdminView(ListView):
     template_name = 'blog_admin/category_admin_index.html'
-    queryset = Category.objects.all()
+    model = Category
 
     def get_context_data(self, **kwargs):
         context = super(CategoryAdminView, self).get_context_data(**kwargs)
+
+        categories = Category.objects.all()
         notes_of_category = {}
-        for cate in self.queryset:
+
+        for cate in categories:
             key = cate.id
             notes_of_category[key] = Note.objects.filter(category_id=key).count()
         context['notes_of_category'] = notes_of_category
+
         return context
 
 
@@ -44,6 +48,12 @@ class CategoryUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('category_admin_index')
+
+
+class CategoryDeleteView(DeleteView):
+    model = Category
+    template_name = 'blog_admin/category_delete.html'
+    success_url = reverse_lazy('category_admin_index')
 
 
 class NoteAdminView(ListView):
@@ -70,3 +80,9 @@ class NoteUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('note_admin_index')
+
+
+class NoteDeleteView(DeleteView):
+    model = Note
+    template_name = 'blog_admin/note_delete.html'
+    success_url = reverse_lazy('note_admin_index')

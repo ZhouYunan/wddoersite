@@ -12,9 +12,9 @@ class Category(models.Model):
 
 
 class Note(models.Model):
-    title = models.CharField(max_length=128, verbose_name="文章名")
-    category = models.ForeignKey(Category, verbose_name="分类", blank=True, null=True)
-    content = models.TextField(verbose_name="笔记正文")
+    title = models.CharField(max_length=128, verbose_name="文章标题")
+    category = models.ForeignKey(Category, verbose_name="文章分类", blank=True, null=True)
+    content = models.TextField(verbose_name="文章正文")
     created_date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
     is_displayed = models.BooleanField(verbose_name="是否显示")
 

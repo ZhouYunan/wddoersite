@@ -28,9 +28,10 @@
                     <th>序号</th>
                     <th>分类ID</th>
                     <th>分类名称</th>
-                    <th>是否显示</th>
                     <th>Note数</th>
                     <th>创建时间</th>
+                    <th>是否显示</th>
+                    <th>是否删除</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,9 +40,10 @@
                         <td>{{ forloop.counter }}</td>
                         <td><a href="{% url 'category_update' cate.id %}">{{ cate.id }}</a></td>
                         <td>{{ cate.name }}</td>
-                        <td>{{ cate.is_displayed }}</td>
                         <td>{{ notes_of_category|get_value:cate.id }}篇</td>
                         <td>{{ cate.created_date|date:"Y-m-d h:m:s" }}</td>
+                        <td>{{ cate.is_displayed }}</td>
+                        <td><a href="{% url 'category_delete' cate.id %}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -49,7 +51,8 @@
     </div>
     <hr />
     <div>
-        <p>注1：点击分类ID修改响应的分类详情</p>
+        <p>注1：点击<strong>分类ID</strong>修改相应的文章详情</p>
+        <p>注2：点击<strong>是否删除</strong>可从数据库彻底删除数据,并会删除分类下的所有文章</p>
     </div>
 
 {% endblock %}
