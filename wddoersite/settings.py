@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'wddoersite.blog_pagination',       #借鉴了https://github.com/staticdev/django-pagination-bootstrap
     'wddoersite.blog_markdown2',         #借鉴了http://github.com/svetlyak40wt/django-markdown2
     # 'wddoersite.pagedown',              #https://github.com/timmyomahony/django-pagedown   &    http://www.oldrss.com/article/tech0001.html
+    'wddoersite.wddoer',
 )
 
 
