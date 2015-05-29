@@ -1,7 +1,7 @@
 # coding:utf-8
 from django.views.generic import ListView, TemplateView, CreateView, UpdateView
 from wddoersite.blog.models import Note, Category
-from forms import CategoryCreateForm
+from forms import CategoryCreateForm, NoteCreateForm
 from django.core.urlresolvers import reverse
 
 
@@ -44,3 +44,29 @@ class CategoryUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('category_admin_index')
+
+
+class NoteAdminView(ListView):
+    template_name = 'blog_admin/note_admin_index.html'
+    queryset = Note.objects.all().order_by('id')
+
+    def get_context_data(self, **kwargs):
+        context = super(NoteAdminView, self).get_context_data(**kwargs)
+        return context
+
+
+class NoteCreateView(CreateView):
+    template_name = 'blog_admin/note_create.html'
+    form_class = NoteCreateForm
+
+    def get_success_url(self):
+        return reverse('note_admin_index')
+
+
+class NoteUpdateView(UpdateView):
+    model = Note
+    fields = ['title', 'is_displayed', 'category', 'content']
+    template_name = 'blog_admin/note_update.html'
+
+    def get_success_url(self):
+        return reverse('note_admin_index')

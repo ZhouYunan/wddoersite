@@ -6,4 +6,11 @@ class CategoryCreateForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ('name', 'is_displayed')
+        fields = ['name', 'is_displayed']
+
+
+class NoteCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Note
+        fields = ['title', 'is_displayed', 'category', 'content']
