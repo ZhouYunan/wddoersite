@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'wddoersite.bootstrap_admin',      #https://github.com/django-admin-bootstrap/django-admin-bootstrap
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'wddoersite.blog',
-    'wddoersite.blog_admin',
+    'wddoersite.blog_admin',        #前端使用http://purecss.io/美化
     'wddoersite.blog_admin.templatetags',
     'wddoersite.pagination_bootstrap',      #https://github.com/staticdev/django-pagination-bootstrap
 
