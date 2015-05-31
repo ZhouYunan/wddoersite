@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^note/create/$', views.NoteCreateView.as_view(), name='note_create'),
     url(r'^note/update/(?P<pk>\d+)/$', views.NoteUpdateView.as_view(), name='note_update'),
     url(r'^note/delete/(?P<pk>\d+)/$', views.NoteDeleteView.as_view(), name='note_delete'),
+    url(r'^user/create/$', views.UserCreateView.as_view(), name='user_create'),
+    url(r'^user/login/$', views.UserLoginView.as_view(), name='user_login'),
 ]

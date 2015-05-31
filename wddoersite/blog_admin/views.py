@@ -1,7 +1,7 @@
 # coding:utf-8
-from django.views.generic import ListView, TemplateView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, TemplateView, CreateView, UpdateView, DeleteView, FormView
 from wddoersite.blog.models import Note, Category
-from forms import CategoryCreateForm, NoteCreateForm
+from forms import CategoryCreateForm, NoteCreateForm, UserCreateForm, UserLoginForm
 from django.core.urlresolvers import reverse, reverse_lazy
 
 
@@ -86,3 +86,17 @@ class NoteDeleteView(DeleteView):
     model = Note
     template_name = 'blog_admin/note_delete.html'
     success_url = reverse_lazy('note_admin_index')
+
+
+class UserCreateView(CreateView):
+    template_name = "blog_admin/user_create.html"
+    form_class = UserCreateForm
+
+    def get_success_url(self):
+        return reverse('wddoer_admin_index')
+
+
+class UserLoginView(FormView):
+    form_class = UserLoginForm
+    template_name = "blog_admin/user_login.html"
+

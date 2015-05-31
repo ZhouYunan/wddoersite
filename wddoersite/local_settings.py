@@ -45,4 +45,4 @@ STATICFILES_DIRS = (
     'blog/static',
 )
 
-LOGIN_REDIRECT_URL = '/blog_admin/'
+AUTH_USER_MODEL = "blog_admin.User"
