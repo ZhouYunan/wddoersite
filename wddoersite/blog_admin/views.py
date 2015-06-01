@@ -93,10 +93,13 @@ class UserCreateView(CreateView):
     form_class = UserCreateForm
 
     def get_success_url(self):
-        return reverse('wddoer_admin_index')
+        return reverse('user_login')
 
 
 class UserLoginView(FormView):
     form_class = UserLoginForm
     template_name = "blog_admin/user_login.html"
+
+    def get_success_url(self):
+        return reverse('wddoer_admin_index')
 
