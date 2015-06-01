@@ -44,27 +44,17 @@
             </nav><!-- /.navbar -->
 
             <div class="container-fluid">
-{#                <div class="row">#}
-{#                    <div  id="sidebar-menu" class="col-sm-2 sidebar-menu" style="left: 0px">#}
-{#                        <br /><br /><br />#}
-{#                        {% for category in categories %}#}
-{#                        <a href="/blog/category/{{ category.id }}" style="text-decoration: none">#}
-{#                            <button class="btn btn-sm btn-info">{{ category.name }}</button>#}
-{#                        </a>#}
-{#                        {% endfor %}#}
-{#                    </div>#}
-
-                    <div id="content" class="col-sm-12 col-sm-offset-0">
-                        <div class="row">
-                            <br /><br />
-                            {% block content %}{% endblock %}
-                            {% block navbarBottom %}{% endblock %}
-                        </div>
+                <div id="content" class="col-sm-12 col-sm-offset-0">
+                    <div class="row">
+                        <br /><br />
+                        {% block content %}{% endblock %}
+                        {% block navbarBottom %}{% endblock %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     {% load staticfiles %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
