@@ -13,3 +13,8 @@
     top: 0;
     z-index: 1000;
 }
+
+body {
+    /*background: #ffffff url("../image/background-pictures.jpg");*/
+    background-color: #eeeeee;
+}

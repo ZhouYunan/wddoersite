@@ -49,7 +49,9 @@ INSTALLED_APPS = (
 
 )
 
-# BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
+"""
+BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
+"""
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
