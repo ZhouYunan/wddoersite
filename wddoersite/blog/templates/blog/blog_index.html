@@ -1,35 +1,29 @@
 {% extends "blog/base.html" %}
 {% load pagination_tags %}
 
+
 {% block title_html %}
     wdsite-Note
 {% endblock %}
 
 
-{% block navbar %}
-    <li class="active"><a href="{% url 'blog_index' %}">Blog</a></li>
-    <li><a href="#">Book</a></li>
-    <li><a href="{% url 'site_about' %}">About</a></li>
-{% endblock %}
-
-
 {% block content %}
-    <br />
     {% for category in categories %}
-    <a href="{% url "category_index" category.id %}" style="text-decoration: none">
-        <button class="btn btn-sm btn-info">{{ category.name }}
-        </button>
-    </a>
+        <a href="{% url "category_index" category.id %}" style="text-decoration: none">
+            <button class="btn">{{ category.name }}
+            </button>
+        </a>
     {% endfor %}
-
-    {% autopaginate notes 5 %}
-        {% for note in notes %}
-            <h2><a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a></h2>
-            <small>{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
-            <p>{{ note.content | truncatechars:400 }} }}</p>
-        {% endfor %}
-    {% paginate %}
-
-    <br />
-    <a href="/blog/2015"  style="text-decoration: none"><button class="btn btn-sm btn-success">2015</button></a>
+    <a href="/blog/2015"  id="wddoer-2015"><button class="btn btn-success">2015</button></a>
+    <div>
+        {% autopaginate notes 5 %}
+            {% for note in notes %}
+                <h3>
+                    <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
+                    <small id="wddoer-2015" style="font-size: 12px">{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+                </h3>
+                <p>{{ note.content | truncatechars:400 }} }}</p>
+            {% endfor %}
+        {% paginate %}
+    </div>
 {% endblock %}

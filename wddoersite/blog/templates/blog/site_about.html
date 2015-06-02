@@ -5,14 +5,7 @@
     wddoersite intro
 {% endblock %}
 
-
-{% block navbar %}
-    <li><a href="{% url 'blog_index' %}">Blog</a></li>
-    <li><a href="#">Book</a></li>
-    <li class="active"><a href="{% url 'site_about' %}">About</a></li>
-{% endblock %}
-
-
 {% block content %}
     <h1>powered by django and bootstrap</h1>
+    <h2><a href="{% url "site_index" %}">Return Index</a></h2>
 {% endblock %}

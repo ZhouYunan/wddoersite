@@ -1,0 +1,32 @@
+
+body {
+    /*background: #ffffff url("../image/background-pictures.jpg");*/
+    background-color: #eeeeee;
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.bg-blog {
+    background-color: #1f8dd6;
+    height: 10px;
+}
+
+.bg-stock {
+    background-color: #dd514c;
+    height: 10px;
+}
+
+.bg-about {
+    background-color: #5eb95e;
+    height: 10px;
+}
+
+#wddoer-2015-father {
+    position: relative;
+}
+
+
+#wddoer-2015 {
+    text-decoration: none;
+    position: absolute;
+    right: 15px;
+}
