@@ -12,3 +12,8 @@ function ShowTime(){
     document.getElementById('nowtime').innerHTML ='现在时间：' + (NowHour<10?('0'+NowHour):NowHour) + ':' + (NowMinute<10?('0'+NowMinute):NowMinute) + ':' + (NowSecond<10?('0'+NowSecond):NowSecond);
     setTimeout('ShowTime()', 1000);
 }
+
+
+
+//  滚动到页面顶部
+$('html, body').animate({scrollTop: 0}, 'fast');

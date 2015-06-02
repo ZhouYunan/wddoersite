@@ -21,9 +21,9 @@
 <body onload="ShowTime()">
     <div class="row">
         <div class="container navbar-fixed-top">
-            <a href="{% url 'blog_index' %}"><div class="col-md-4 bg-blog"></div></a>
-            <a href="#"><div class="col-md-4 bg-stock"></div></a>
-            <a href="{% url 'site_about' %}"><div class="col-md-4 bg-about"></div></a>
+            <a href="{% url 'blog_index' %}"><div class="col-xs-4 bg-blog"></div></a>
+            <a href="#"><div class="col-xs-4 bg-stock"></div></a>
+            <a href="{% url 'site_about' %}"><div class="col-xs-4 bg-about"></div></a>
         </div>
         <br />
         <div class="container" id="wddoer-2015-father">
@@ -38,6 +38,6 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
     <!-- my js file defined by wddoer -->
-    <script src="{% static 'blog/js/wddoer_time.js' %}"></script>
+    <script src="{% static 'blog/js/wddoer_base.js' %}"></script>
 </body>
 </html>

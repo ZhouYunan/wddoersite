@@ -9,11 +9,11 @@
 {% block content %}
     <h4><strong>2015年共有{{ amount_notes }}篇文章：</strong></h4>
     {% for note in note_list %}
-        <h3>
+        <h4>
             <small>{{ note.created_date|date:"Y-m-d H:m:s" }}
-            @^_^@
+            <span class="glyphicon glyphicon-resize-horizontal"></span>
             <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
             <span style="color: #419641" id="wddoer-2015">{{ note.category }}</span></small>
-        </h3>
+        </h4>
     {% endfor %}
 {% endblock %}
