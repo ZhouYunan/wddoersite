@@ -45,4 +45,4 @@ STATICFILES_DIRS = (
     'blog/static',
 )
 
-AUTH_USER_MODEL = "blog_admin.User"
+AUTH_USER_MODEL = "iadmin.User"

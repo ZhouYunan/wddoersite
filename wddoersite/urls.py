@@ -11,6 +11,6 @@ urlpatterns = [
 
     url(r'', include('wddoersite.blog.urls')),
 
-    url(r'^iadmin/', include('wddoersite.blog_admin.urls')),
+    url(r'^iadmin/', include('wddoersite.iadmin.urls')),
 
 ]
