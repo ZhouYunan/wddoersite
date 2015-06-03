@@ -44,7 +44,7 @@ INSTALLED_APPS = (
     'wddoersite.blog',
     'wddoersite.iadmin',            #前端使用http://purecss.io/美化
     'wddoersite.blog_pagination',       #借鉴了https://github.com/staticdev/django-pagination-bootstrap
-    # 'wddoersite.pagedown',              #https://github.com/timmyomahony/django-pagedown   &    http://www.oldrss.com/article/tech0001.html
+    'wddoersite.stock',
 
 )
 

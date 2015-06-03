@@ -55,6 +55,7 @@ def markdown(value, arg=''):
             safe_mode = False
 
         return mark_safe(markdown2.markdown(force_unicode(value), extras=extras, safe_mode=safe_mode))
+
 markdown.is_safe = True
 
 register.filter(markdown)

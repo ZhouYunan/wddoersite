@@ -9,6 +9,8 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^stock/', include('wddoersite.stock.urls')),
+
     url(r'', include('wddoersite.blog.urls')),
 
     url(r'^iadmin/', include('wddoersite.iadmin.urls')),

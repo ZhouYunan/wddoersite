@@ -6,16 +6,9 @@
 {% endblock %}
 
 
-{% block navbar %}
-    <li><a href="{% url 'blog_index' %}">Blog</a></li>
-    <li><a href="#">Book</a></li>
-    <li><a href="{% url 'site_about' %}">About</a></li>
-{% endblock %}
-
-
 {% block content %}
     <div>
-        <h1>Welcome</h1>
+        <h1>Welcome to wddoer.com</h1>
         <p>this is wddoer's site, powered by django1.8, bootstrap3 and markdown</p>
         <p><a class="btn btn-primary btn-lg" href="{% url 'blog_index' %}" role="button">Jump To Blog</a></p>
         <p><a class="btn btn-primary btn-lg" href="/admin/" role="button">Jump To Django Admin</a></p>
@@ -24,13 +17,3 @@
         <div id="nowtime"></div>
     </div>
 {% endblock %}
-
-
-{% block navbarBottom %}
-    <nav class="navbar-default navbar-fixed-bottom">
-        <footer>
-            <p><span>&copy;2015  wddoer.com</span></p>
-        </footer>
-    </nav>
-{% endblock %}
-
