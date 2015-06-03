@@ -15,5 +15,7 @@ function ShowTime(){
 
 
 
-//  滚动到页面顶部
-$('html, body').animate({scrollTop: 0}, 'fast');
+//  设置网页中所有链接都在新窗口打开
+$(document.links).filter(function() {
+    return this.hostname != window.location.hostname;
+}).attr('target', '_blank');

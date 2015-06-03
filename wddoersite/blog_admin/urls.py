@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'^note/create/$', blog_admin_required(views.NoteCreateView.as_view()), name='note_create'),
     url(r'^note/update/(?P<pk>\d+)/$', blog_admin_required(views.NoteUpdateView.as_view()), name='note_update'),
     url(r'^note/delete/(?P<pk>\d+)/$', blog_admin_required(views.NoteDeleteView.as_view()), name='note_delete'),
-    url(r'^user/create/$', blog_admin_required(views.UserCreateView.as_view()), name='user_create'),
+    url(r'^user/create/$', views.UserCreateView.as_view(), name='user_create'),
     url(r'^user/login/$', blog_admin_required(views.UserLoginView.as_view()), name='user_login'),
 ]

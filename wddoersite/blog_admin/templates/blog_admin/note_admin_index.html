@@ -26,11 +26,12 @@
                 <tr>
                     <th>序号</th>
                     <th>文章ID</th>
-                    <th>标题</th>
-                    <th>分类</th>
-                    <th>正文</th>
+                    <th>文章标题</th>
+                    <th>文章分类</th>
+                    <th>文章正文</th>
                     <th>创建时间</th>
                     <th>是否显示</th>
+                    <th>是否编辑</th>
                     <th>是否删除</th>
                 </tr>
             </thead>
@@ -38,12 +39,13 @@
                 {% for note in note_list %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td><a href="{% url 'note_update' note.id %}">{{ note.id }}</a></td>
-                        <td>{{ note.title|truncatechars:40 }}</td>
+                        <td>{{ note.id }}</td>
+                        <td>{{ note.title|truncatechars:25 }}</td>
                         <td>{{ note.category }}</td>
-                        <td>{{ note.content|truncatechars:66 }}</td>
+                        <td>{{ note.content|truncatechars:60 }}</td>
                         <td>{{ note.created_date|date:"Y-m-d h:m:s" }}</td>
                         <td>{{ note.is_displayed }}</td>
+                        <td><a href="{% url 'note_update' note.id %}">Update</a></td>
                         <td><a href="{% url 'note_delete' note.id %}">Delete</a></td>
                     </tr>
                 {% endfor %}
@@ -52,7 +54,7 @@
     </div>
     <hr />
     <div>
-        <p>注1：点击<strong>文章ID</strong>修改相应的文章详情</p>
+        <p>注1：点击<strong>是否编辑</strong>修改相应的文章详情</p>
         <p>注2：点击<strong>是否删除</strong>可从数据库彻底删除数据</p>
     </div>
 
