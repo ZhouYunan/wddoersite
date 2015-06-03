@@ -1,4 +1,5 @@
 # coding:utf-8
+from django.http import Http404
 from django.views.generic import ListView, TemplateView, CreateView, UpdateView, DeleteView, FormView
 from wddoersite.blog.models import Note, Category
 from forms import CategoryCreateForm, NoteCreateForm, UserCreateForm, UserLoginForm
@@ -58,7 +59,7 @@ class CategoryDeleteView(DeleteView):
 
 class NoteAdminView(ListView):
     template_name = 'blog_admin/note_admin_index.html'
-    queryset = Note.objects.all().order_by('id')
+    model = Note
 
     def get_context_data(self, **kwargs):
         context = super(NoteAdminView, self).get_context_data(**kwargs)

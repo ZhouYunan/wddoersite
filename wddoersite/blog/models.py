@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, verbose_name="分类名称")
     created_date = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
     is_displayed = models.BooleanField(verbose_name="是否显示")
 

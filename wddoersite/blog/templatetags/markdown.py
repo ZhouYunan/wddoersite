@@ -1,6 +1,8 @@
 """
 Markdown2 filter, requires the python-markdown2 library from
+
 http://code.google.com/p/python-markdown2
+http://github.com/svetlyak40wt/django-markdown2
 
 This code is based on django's markup contrib.
 """
