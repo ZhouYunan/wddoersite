@@ -48,8 +48,8 @@
                         <td><a href="{% url 'user_update' usr.id %}">Update</a></td>
                         <td>{{ usr.email }}</td>
                         <td>{{ usr.password|truncatechars:55 }}</td>
-                        <td>{{ usr.created_date|date:"Y-m-d h:m:s" }}</td>
-                        <td>{{ usr.last_login|date:"Y-m-d h:m:s" }}</td>
+                        <td>{{ usr.created_date|date:"Y-m-d H:m:s" }}</td>
+                        <td>{{ usr.last_login|date:"Y-m-d H:m:s" }}</td>
                         <td>{{ usr.is_active }}</td>
                         <td>{{ usr.is_admin }}</td>
                         <td><a href="{% url 'user_delete' usr.id %}">Delete</a></td>
