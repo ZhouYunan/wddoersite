@@ -55,8 +55,3 @@ class UserCreateForm(forms.ModelForm):
         if commit:
             user.save()
         return user
-
-
-class UserLoginForm(AuthenticationForm):
-    class Meta:
-        fields = ['email', 'password', ]

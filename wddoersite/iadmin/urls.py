@@ -16,6 +16,11 @@ urlpatterns = [
     url(r'^note/update/(?P<pk>\d+)/$', blog_admin_required(views.NoteUpdateView.as_view()), name='note_update'),
     url(r'^note/delete/(?P<pk>\d+)/$', blog_admin_required(views.NoteDeleteView.as_view()), name='note_delete'),
 
-    url(r'^user/create/$', views.UserCreateView.as_view(), name='user_create'),
-    url(r'^user/login/$', blog_admin_required(views.UserLoginView.as_view()), name='user_login'),
+    url(r'^user/login/$', views.UserLoginView.as_view(), name='user_login'),
+    url(r'^user/logout/$', blog_admin_required(views.UserLogoutView.as_view()), name='user_logout'),
+    url(r'^user/$', blog_admin_required(views.UserAdminView.as_view()), name='user_admin_index'),
+    url(r'^user/create/$', blog_admin_required(views.UserCreateView.as_view()), name='user_create'),
+    url(r'^user/update/(?P<pk>\d+)/$', blog_admin_required(views.UserUpdateView.as_view()), name='user_update'),
+    url(r'^user/delete/(?P<pk>\d+)/$', blog_admin_required(views.UserDeleteView.as_view()), name='user_delete'),
+
 ]

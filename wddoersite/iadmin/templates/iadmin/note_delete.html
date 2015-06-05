@@ -1,4 +1,4 @@
-{% extends "blog_admin/base.html" %}
+{% extends "iadmin/base.html" %}
 
 
 {% block title_html %}
@@ -9,21 +9,21 @@
 {% block navbar %}
     <li class="pure-menu-item"><a href="{% url 'category_admin_index' %}" class="pure-menu-link">Category</a></li>
     <li class="pure-menu-item pure-menu-active"><a href="{% url 'note_admin_index' %}" class="pure-menu-link">Note</a></li>
-    <li class="pure-menu-item"><a href="#" class="pure-menu-link">待定</a></li>
+    <li class="pure-menu-item"><a href="{% url 'user_admin_index' %}" class="pure-menu-link">User</a></li>
     <li class="pure-menu-item"><a href="{% url 'site_index' %}" class="pure-menu-link">返回首页</a></li>
 {% endblock %}
 
 
 {% block content %}
     <div class="pure-g">
-    <div class="pure-u-1-5"><a href="{% url 'note_admin_index' %}">文章列表</a></div>
-    <div class="pure-u-1-5"><a href="{% url 'note_create' %}">新增文章</a></div>
+    <div class="pure-u-1-8"><a href="{% url 'note_admin_index' %}">文章列表</a></div>
+    <div class="pure-u-1-8"><a href="{% url 'note_create' %}">新增文章</a></div>
     </div>
-    <hr />
+    <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     <div>
         <form action="" method="post">{% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Update" />
+            <p>是否确定从数据库彻底删除此文章："{{ object }}"?</p>
+            <input type="submit" value="Confirm" />
         </form>
     </div>
 {% endblock %}
