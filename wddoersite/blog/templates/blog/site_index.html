@@ -8,10 +8,9 @@
 
 {% block content %}
     <div>
-        <h1>Welcome to wddoer.com</h1>
+        <h1>Welcome</h1>
         <p>this is wddoer's site, powered by django1.8, bootstrap3 and markdown</p>
         <p><a class="btn btn-primary btn-lg" href="{% url 'blog_index' %}" role="button">Jump To Blog</a></p>
-        <p><a class="btn btn-primary btn-lg" href="{% url 'user_login' %}" role="button">Jump To Login Page</a></p>
         <p>访问时间：{{ visited_time }}</p>
         <div id="nowtime"></div>
     </div>
