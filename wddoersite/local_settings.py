@@ -1,16 +1,50 @@
 # coding: utf-8
 
-# DEBUG = False
-# TEMPLATE_DEBUG = DEBUG
-# ALLOWED_HOSTS = ['*']
+import os
 
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+
+    'wddoersite.blog_pagination.middleware.PaginationMiddleware',
+)
+
+ROOT_URLCONF = 'wddoersite.urls'
+
+BASE_DIR = 'D:/webprojects/wddoersite'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'wddoersite/blog/templates')
+        ],
+        'OPTIONS': {
+            'context_processors': [
+                "django.core.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.core.context_processors.debug",
+                "django.core.context_processors.i18n",
+                "django.core.context_processors.media",
+            ],
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader'
+            ]
+        },
+    },
+]
 
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Shanghai'
 
-# Database
-# https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',     # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -23,26 +57,16 @@ DATABASES = {
     }
 }
 
-import os
-
-BASE_DIR = 'D:/webprojects/wddoersite'
-
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'wddoersite/blog/templates').replace('\\', '/'),
-    'blog/templates',
+    os.path.join(BASE_DIR, 'wddoersite/iadmin/templates').replace('\\', '/'),
+    os.path.join(BASE_DIR, 'wddoersite/stock/templates').replace('\\', '/'),
 )
 
-#STATIC_URL = BASE_DIR + '/static/'
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/dev/howto/static-files/
 STATICFILES_DIRS = (
-    # ("css", os.path.join(BASE_DIR, '../wddoersite/static')),
-    # ("fonts", os.path.join(BASE_DIR, '../wddoersite/static')),
-    # ("js", os.path.join(BASE_DIR, '../wddoersite/static')),
-    # ("media", os.path.join(BASE_DIR, '../wddoersite/static')),
     os.path.join(BASE_DIR, 'wddoersite/blog/static').replace('\\', '/'),
-    'blog/static',
+    os.path.join(BASE_DIR, 'wddoersite/iadmin/static').replace('\\', '/'),
+    os.path.join(BASE_DIR, 'wddoersite/stock/static').replace('\\', '/'),
 )
 
 AUTH_USER_MODEL = "iadmin.User"
