@@ -14,7 +14,7 @@
             </button>
         </a>
     {% endfor %}
-    <a href="/blog/2015"  id="wddoer-2015"><button class="btn btn-success">2015</button></a>
+    <a href="{% url 'blog_archive' %}"  id="wddoer-2015"><button class="btn btn-success">2015</button></a>
     <div>
         {% autopaginate notes 5 %}
             {% for note in notes %}

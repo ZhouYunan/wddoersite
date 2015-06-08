@@ -57,15 +57,12 @@ def categoryIndex(request, pk):
     )
 
 
-class NoteYearArchiveView(YearArchiveView):
+class NoteArchiveView(ListView):
     template_name = "blog/blog_archive_year.html"
     queryset = Note.objects.filter(is_displayed=True, category__is_displayed=True)
-    date_field = "created_date"
-    make_object_list = True
-    allow_future = True
     model = Note
 
     def get_context_data(self, **kwargs):
-        context = super(NoteYearArchiveView, self).get_context_data(**kwargs)
+        context = super(NoteArchiveView, self).get_context_data(**kwargs)
         context['amount_notes'] = self.queryset.count()
         return context

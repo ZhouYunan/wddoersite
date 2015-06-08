@@ -7,7 +7,7 @@
 
 
 {% block content %}
-    <h4><strong>2015年共有{{ amount_notes }}篇文章：</strong></h4>
+    <h4><strong>本站目前共有{{ amount_notes }}篇文章：</strong></h4>
     {% for note in note_list %}
         <h4>
             <small>{{ note.created_date|date:"Y-m-d H:m:s" }}
