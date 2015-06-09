@@ -8,21 +8,21 @@
 
 
 {% block content %}
+    <a href="{% url 'blog_filter' %}"><button class="btn btn-success">Search</button></a>
+    <a href="{% url 'blog_archive' %}"><button class="btn btn-success">Archive</button></a>
     {% for category in categories %}
         <a href="{% url "category_index" category.id %}" style="text-decoration: none">
             <button class="btn">{{ category.name }}
             </button>
         </a>
     {% endfor %}
-    <a href="{% url 'blog_filter' %}" id="wddoer-right-left"><button class="btn btn-success">Search</button></a>
-    <a href="{% url 'blog_archive' %}"  id="wddoer-right"><button class="btn btn-success">Archive</button></a>
     <div>
         {% autopaginate notes 5 %}
             {% for note in notes %}
                 <h3>
                     <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
-                    <small id="wddoer-right" style="font-size: 12px">{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
                 </h3>
+                <small style="font-size: 12px">{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
                 <p>{{ note.content | truncatechars:198 }} }}</p>
             {% endfor %}
         {% paginate %}

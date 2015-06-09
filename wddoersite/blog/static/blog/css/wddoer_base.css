@@ -20,22 +20,6 @@ body {
     height: 10px;
 }
 
-#wddoer-right-father {
-    position: relative;
-}
-
-#wddoer-right {
-    text-decoration: none;
-    position: absolute;
-    right: 15px;
-}
-
-#wddoer-right-left {
-    text-decoration: none;
-    position: absolute;
-    right: 95px;
-}
-
 .wddoer-backtotop {
     position: fixed;
     bottom: 25px;
