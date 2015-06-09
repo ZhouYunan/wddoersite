@@ -14,13 +14,14 @@
             </button>
         </a>
     {% endfor %}
-    <a href="{% url 'blog_archive' %}"  id="wddoer-2015"><button class="btn btn-success">2015</button></a>
+    <a href="{% url 'blog_filter' %}" id="wddoer-right-left"><button class="btn btn-success">Search</button></a>
+    <a href="{% url 'blog_archive' %}"  id="wddoer-right"><button class="btn btn-success">Archive</button></a>
     <div>
         {% autopaginate notes 5 %}
             {% for note in notes %}
                 <h3>
                     <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
-                    <small id="wddoer-2015" style="font-size: 12px">{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+                    <small id="wddoer-right" style="font-size: 12px">{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
                 </h3>
                 <p>{{ note.content | truncatechars:198 }} }}</p>
             {% endfor %}

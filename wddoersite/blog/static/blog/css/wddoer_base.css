@@ -20,14 +20,20 @@ body {
     height: 10px;
 }
 
-#wddoer-2015-father {
+#wddoer-right-father {
     position: relative;
 }
 
-#wddoer-2015 {
+#wddoer-right {
     text-decoration: none;
     position: absolute;
     right: 15px;
+}
+
+#wddoer-right-left {
+    text-decoration: none;
+    position: absolute;
+    right: 95px;
 }
 
 .wddoer-backtotop {

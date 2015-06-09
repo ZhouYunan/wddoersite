@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^blog/note/(?P<pk>\d+)/$', views.BlogDetailView.as_view(), name="blog_detail"),
     url(r'^blog/category/(?P<pk>\d+)/$', views.categoryIndex, name="category_index"),
     url(r'^blog/archive/$', views.NoteArchiveView.as_view(), name="blog_archive"),
+    url(r'^blog/filter/$', views.NoteFilterView.as_view(), name="blog_filter"),
 ]

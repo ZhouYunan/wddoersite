@@ -4,8 +4,10 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.views.generic import ListView, DetailView, TemplateView, YearArchiveView, CreateView
+from django_filters.views import FilterView
 from models import Note, Category
 from datetime import datetime
+from wddoersite.blog.filters import NoteFilter
 
 
 class IndexView(TemplateView):
@@ -58,7 +60,7 @@ def categoryIndex(request, pk):
 
 
 class NoteArchiveView(ListView):
-    template_name = "blog/blog_archive_year.html"
+    template_name = "blog/blog_archive.html"
     queryset = Note.objects.filter(is_displayed=True, category__is_displayed=True)
     model = Note
 
@@ -66,3 +68,9 @@ class NoteArchiveView(ListView):
         context = super(NoteArchiveView, self).get_context_data(**kwargs)
         context['amount_notes'] = self.queryset.count()
         return context
+
+
+class NoteFilterView(FilterView):
+    template_name = "blog/blog_filter.html"
+    filterset_class = NoteFilter
+    queryset = Note.objects.filter(is_displayed=True, category__is_displayed=True).order_by("?")
