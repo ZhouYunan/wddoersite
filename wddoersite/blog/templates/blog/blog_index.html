@@ -8,8 +8,8 @@
 
 
 {% block content %}
-    <a href="{% url 'blog_filter' %}"><button class="btn btn-success">Search</button></a>
-    <a href="{% url 'blog_archive' %}"><button class="btn btn-success">Archive</button></a>
+    <a href="{% url 'blog_filter' %}"><button class="btn btn-primary">Search</button></a>
+    <a href="{% url 'blog_archive' %}"><button class="btn btn-primary">Archive</button></a>
     {% for category in categories %}
         <a href="{% url "category_index" category.id %}" style="text-decoration: none">
             <button class="btn">{{ category.name }}
