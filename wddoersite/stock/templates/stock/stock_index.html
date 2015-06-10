@@ -8,4 +8,25 @@
 
 {% block content %}
     <a href="{% url 'real-time' %}"><button class="btn">去看全球股市实时显示</button></a>
+
+    <hr style=" height:2px;border:none;border-top:2px dotted #dd514c;" />
+
+    <script src="http://hq.sinajs.cn/list=sh000001" charset="gb2312"></script>
+    <script src="http://hq.sinajs.cn/list=sz399001" charset="gb2312"></script>
+
+    <script>
+        var sh000001 = hq_str_sh000001.split(",");
+        document.write(
+            "名称：" + sh000001[0] + "|" + "今开盘价："+sh000001[1] + "|" + "昨收盘价：" + sh000001[2] + "|" +
+            "现价：" + sh000001[3] + "|" + "今最高价："+sh000001[4] + "|" + "今最低价：" + sh000001[5] + "|" +
+            "成交总手：" + sh000001[8] + "|" + "成交金额（元）：" + sh000001[9] + "|" + "当前日期："+sh000001[30] + "|" + "当前时间：" + sh000001[31] + "<br />"
+        );
+
+        var sz399001 = hq_str_sz399001.split(",");
+        document.write(
+            "名称：" + sz399001[0] + "|" + "今开盘价："+sz399001[1] + "|" + "昨收盘价：" + sz399001[2] + "|" +
+            "现价：" + sz399001[3] + "|" + "今最高价："+sz399001[4] + "|" + "今最低价：" + sz399001[5] + "|" +
+            "成交总手：" + sz399001[8] + "|" + "成交金额（元）：" + sh000001[9] + "|" + "当前日期："+sh000001[30] + "|" + "当前时间：" + sz399001[31]
+        );
+    </script>
 {% endblock %}
