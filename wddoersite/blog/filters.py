@@ -10,5 +10,5 @@ class NoteFilter(django_filters.FilterSet):
     class Meta:
         model = Note
         fields = {
-            'title': ['contains', ]
+            'title': ['icontains', ]
         }
