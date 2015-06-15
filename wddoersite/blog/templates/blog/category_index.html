@@ -12,7 +12,7 @@
             <button class="btn">{{ category.name }}</button>
         </a>
     {% endfor %}
-
+    <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     {% autopaginate notes 5 %}
         {% for note in notes %}
             <h3>

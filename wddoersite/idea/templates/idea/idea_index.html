@@ -9,6 +9,7 @@
 
 {% block content %}
     <h4><strong>本站目前共有{{ amount_ideas }}篇Idea：</strong></h4>
+    <hr style=" height:2px;border:none;border-top:2px dotted #FAD232;" />
     {% autopaginate ideas 20 %}
         {% for idea in ideas %}
             <h4>

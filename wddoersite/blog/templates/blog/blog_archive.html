@@ -8,6 +8,7 @@
 
 {% block content %}
     <h4><strong>本站目前共有{{ amount_notes }}篇文章：</strong></h4>
+    <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     {% autopaginate note_list 20 %}
         {% for note in note_list %}
             <h4>
