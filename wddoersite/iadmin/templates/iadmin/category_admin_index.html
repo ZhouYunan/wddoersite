@@ -44,7 +44,7 @@
                         <td><a href="{% url 'category_update' cate.id %}">Update</a></td>
                         <td>{{ cate.name }}</td>
                         <td>{{ notes_of_category|get_value:cate.id }}篇</td>
-                        <td>{{ cate.created_date|date:"Y-m-d h:m:s" }}</td>
+                        <td>{{ cate.created_date|date:"Y-m-d" }} {{ cate.created_date|date:"H:i:s" }}</td>
                         <td>{{ cate.is_displayed }}</td>
                         <td><a href="{% url 'category_delete' cate.id %}">Delete</a></td>
                     </tr>

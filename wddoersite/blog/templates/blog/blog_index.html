@@ -22,7 +22,7 @@
                 <h3>
                     <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
                 </h3>
-                <small style="font-size: 12px">{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+                <small style="font-size: 12px">{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }} <span style="color: #419641">{{ note.category }}</span></small>
                 <p>{{ note.content | truncatechars:198 }} }}</p>
             {% endfor %}
         {% paginate %}

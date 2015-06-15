@@ -43,7 +43,7 @@
                         <td><a href="{% url 'idea_update' idea.id %}">Update</a></td>
                         <td>{{ idea.tag }}</td>
                         <td>{{ idea.content|truncatechars:50 }}</td>
-                        <td>{{ idea.created_date|date:"Y-m-d h:m:s" }}</td>
+                        <td>{{ idea.created_date|date:"Y-m-d" }} {{ idea.created_date|date:"H:i:s" }}</td>
                         <td>{{ idea.is_displayed }}</td>
                         <td><a href="{% url 'idea_delete' idea.id %}">Delete</a></td>
                     </tr>

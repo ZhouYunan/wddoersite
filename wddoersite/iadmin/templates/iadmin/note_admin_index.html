@@ -45,7 +45,7 @@
                         <td>{{ note.title|truncatechars:25 }}</td>
                         <td>{{ note.category }}</td>
                         <td>{{ note.content|truncatechars:60 }}</td>
-                        <td>{{ note.created_date|date:"Y-m-d h:m:s" }}</td>
+                        <td>{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}</td>
                         <td>{{ note.is_displayed }}</td>
                         <td><a href="{% url 'note_delete' note.id %}">Delete</a></td>
                     </tr>

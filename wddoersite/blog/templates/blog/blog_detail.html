@@ -16,7 +16,7 @@
 
     <h3>
         {{ note.title }}
-        <small id="wddoer-2015" style="font-size: 12px">{{ note.created_date|date:"Y-m-d H:m:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+        <small id="wddoer-2015" style="font-size: 12px">{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }} <span style="color: #419641">{{ note.category }}</span></small>
     </h3>
     <hr style=" height:2px;border:none;border-top:2px dotted #419641;" />
     <div>{{ note.content | markdown:"safe, code-friendly, code-color" }}</div>

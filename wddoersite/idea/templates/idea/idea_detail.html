@@ -9,7 +9,7 @@
 {% block content %}
     <h3>
         {{ idea.tag }}
-        <small id="wddoer-2015" style="font-size: 12px">{{ idea.created_date|date:"Y-m-d H:m:s" }}</small>
+        <small id="wddoer-2015" style="font-size: 12px">{{ idea.created_date|date:"Y-m-d" }} {{ idea.created_date|date:"H:i:s" }}</small>
     </h3>
     <hr style=" height:2px;border:none;border-top:2px dotted #419641;" />
     <div>{{ idea.content }}</div>
