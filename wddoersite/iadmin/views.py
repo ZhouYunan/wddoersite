@@ -9,9 +9,10 @@ from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic import ListView, TemplateView, CreateView, UpdateView, DeleteView, FormView
 from wddoersite.blog.models import Note, Category
-from forms import CategoryCreateForm, NoteCreateForm, UserCreateForm
+from forms import CategoryCreateForm, NoteCreateForm, UserCreateForm, IdeaCreateForm
 from django.core.urlresolvers import reverse, reverse_lazy
 from wddoersite.iadmin.models import User
+from wddoersite.idea.models import Idea
 
 
 class WddoerAdminView(TemplateView):
@@ -23,6 +24,8 @@ class WddoerAdminView(TemplateView):
         context['amount_category_displayed'] = Category.objects.exclude(is_displayed=False).count()
         context['amount_note'] = Note.objects.all().count()
         context['amount_note_displayed'] = Note.objects.exclude(is_displayed=False).count()
+        context['amount_idea'] = Idea.objects.all().count()
+        context['amount_idea_displayed'] = Idea.objects.filter(tag="DSBJ").exclude(is_displayed=False).count()
         context['amount_user'] = User.objects.all().count()
         context['amount_user_admin'] = User.objects.exclude(is_admin=False).count()
         return context
@@ -160,3 +163,35 @@ class UserDeleteView(DeleteView):
     model = User
     template_name = 'iadmin/user_delete.html'
     success_url = reverse_lazy('user_admin_index')
+
+
+class IdeaAdminView(ListView):
+    template_name = 'iadmin/idea_admin_index.html'
+    model = Idea
+
+    def get_context_data(self, **kwargs):
+        context = super(IdeaAdminView, self).get_context_data(**kwargs)
+        return context
+
+
+class IdeaCreateView(CreateView):
+    template_name = 'iadmin/idea_create.html'
+    form_class = IdeaCreateForm
+
+    def get_success_url(self):
+        return reverse('idea_admin_index')
+
+
+class IdeaUpdateView(UpdateView):
+    model = Idea
+    fields = ['tag', 'is_displayed', 'content']
+    template_name = 'iadmin/idea_update.html'
+
+    def get_success_url(self):
+        return reverse('idea_admin_index')
+
+
+class IdeaDeleteView(DeleteView):
+    model = Idea
+    template_name = 'iadmin/idea_delete.html'
+    success_url = reverse_lazy('idea_admin_index')

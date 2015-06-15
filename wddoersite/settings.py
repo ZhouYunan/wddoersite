@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'wddoersite.iadmin',
     'wddoersite.blog_pagination',
     'wddoersite.stock',
+    'wddoersite.idea',
 )
 
 MIDDLEWARE_CLASSES = (

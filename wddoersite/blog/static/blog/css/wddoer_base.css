@@ -10,6 +10,11 @@ body {
     height: 10px;
 }
 
+.bg-idea {
+    background-color: #F37B1D;
+    height: 10px;
+}
+
 .bg-stock {
     background-color: #dd514c;
     height: 10px;

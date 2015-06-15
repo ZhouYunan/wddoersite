@@ -2,14 +2,14 @@
 
 
 {% block blog_admin %}
-    wddoersite
+    idea-admin
 {% endblock %}
 
 
 {% block navbar %}
     <li class="pure-menu-item"><a href="{% url 'category_admin_index' %}" class="pure-menu-link">Category</a></li>
-    <li class="pure-menu-item pure-menu-active"><a href="{% url 'note_admin_index' %}" class="pure-menu-link">Note</a></li>
-    <li class="pure-menu-item"><a href="{% url 'idea_admin_index' %}" class="pure-menu-link">Idea</a></li>
+    <li class="pure-menu-item"><a href="{% url 'note_admin_index' %}" class="pure-menu-link">Note</a></li>
+    <li class="pure-menu-item pure-menu-active"><a href="{% url 'idea_admin_index' %}" class="pure-menu-link">Idea</a></li>
     <li class="pure-menu-item"><a href="{% url 'user_admin_index' %}" class="pure-menu-link">User</a></li>
     <li class="pure-menu-item"><a href="{% url 'site_index' %}" class="pure-menu-link">返回首页</a></li>
 {% endblock %}
@@ -17,8 +17,8 @@
 
 {% block content %}
     <div class="pure-g">
-        <div class="pure-u-1-8"><a href="{% url 'note_admin_index' %}">文章列表</a></div>
-        <div class="pure-u-1-8"><a href="{% url 'note_create' %}">新增文章</a></div>
+        <div class="pure-u-1-8"><a href="{% url 'idea_admin_index' %}">短语列表</a></div>
+        <div class="pure-u-1-8"><a href="{% url 'idea_create' %}">新增短语</a></div>
     </div>
     <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     <div>
@@ -26,28 +26,26 @@
             <thead>
                 <tr>
                     <th>序号</th>
-                    <th>文章ID</th>
+                    <th>短语ID</th>
                     <th>是否编辑</th>
-                    <th>文章标题</th>
-                    <th>文章分类</th>
-                    <th>文章正文</th>
+                    <th>短语分类</th>
+                    <th>短语内容</th>
                     <th>创建时间</th>
                     <th>是否显示</th>
                     <th>是否删除</th>
                 </tr>
             </thead>
             <tbody>
-                {% for note in note_list %}
+                {% for idea in idea_list %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ note.id }}</td>
-                        <td><a href="{% url 'note_update' note.id %}">Update</a></td>
-                        <td>{{ note.title|truncatechars:25 }}</td>
-                        <td>{{ note.category }}</td>
-                        <td>{{ note.content|truncatechars:60 }}</td>
-                        <td>{{ note.created_date|date:"Y-m-d h:m:s" }}</td>
-                        <td>{{ note.is_displayed }}</td>
-                        <td><a href="{% url 'note_delete' note.id %}">Delete</a></td>
+                        <td>{{ idea.id }}</td>
+                        <td><a href="{% url 'idea_update' idea.id %}">Update</a></td>
+                        <td>{{ idea.tag }}</td>
+                        <td>{{ idea.content|truncatechars:50 }}</td>
+                        <td>{{ idea.created_date|date:"Y-m-d h:m:s" }}</td>
+                        <td>{{ idea.is_displayed }}</td>
+                        <td><a href="{% url 'idea_delete' idea.id %}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -55,7 +53,7 @@
     </div>
     <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     <div>
-        <p>注1：点击<strong>是否编辑</strong>修改相应的文章详情</p>
+        <p>注1：点击<strong>是否编辑</strong>修改相应的短语详情</p>
         <p>注2：点击<strong>是否删除</strong>可从数据库彻底删除数据</p>
     </div>
 

@@ -9,6 +9,7 @@
 {% block navbar %}
     <li class="pure-menu-item"><a href="{% url 'category_admin_index' %}" class="pure-menu-link">Category</a></li>
     <li class="pure-menu-item"><a href="{% url 'note_admin_index' %}" class="pure-menu-link">Note</a></li>
+    <li class="pure-menu-item"><a href="{% url 'idea_admin_index' %}" class="pure-menu-link">Idea</a></li>
     <li class="pure-menu-item"><a href="{% url 'user_admin_index' %}" class="pure-menu-link">User</a></li>
     <li class="pure-menu-item"><a href="{% url 'site_index' %}" class="pure-menu-link">返回首页</a></li>
 {% endblock %}
@@ -27,6 +28,8 @@
         <p>网站显示的文章：{{ amount_note_displayed }}篇</p>
         <p>文章分类：{{ amount_category }}种</p>
         <p>网站显示的文章分类：{{ amount_category_displayed }}种</p>
+        <p>短语：{{ amount_idea }}记</p>
+        <p>网站显示的短语：{{ amount_idea_displayed }}记 | 注：仅显示了读书笔记</p>
         <p>用户数：{{ amount_user }}位</p>
         <p>有管理权限的用户数：{{ amount_user_admin }}位</p>
     </div>

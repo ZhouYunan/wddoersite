@@ -5,6 +5,7 @@ from wddoersite.blog.models import Note, Category
 from django import forms
 from models import User
 from django.utils.translation import ugettext_lazy as _
+from wddoersite.idea.models import Idea
 
 
 class CategoryCreateForm(forms.ModelForm):
@@ -19,6 +20,13 @@ class NoteCreateForm(forms.ModelForm):
     class Meta:
         model = Note
         fields = ['title', 'is_displayed', 'category', 'content']
+
+
+class IdeaCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Idea
+        fields = ['tag', 'is_displayed', 'content']
 
 
 class UserCreateForm(forms.ModelForm):
