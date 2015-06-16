@@ -17,7 +17,7 @@
                 <span class="glyphicon glyphicon-resize-horizontal"></span>
                 <span style="color: #419641">{{ idea.tag }}</span>
                 <span class="glyphicon glyphicon-resize-horizontal"></span>
-                <a href="{% url "idea_detail" idea.id %}" style="text-decoration: none">{{ idea.content }}</a></small>
+                <a href="{% url "idea_detail" idea.id %}" style="text-decoration: none">{{ idea.content|truncatechars:100 }}</a></small>
             </h4>
         {% endfor %}
     {% paginate %}
