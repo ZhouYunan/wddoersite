@@ -25,7 +25,7 @@ class WddoerAdminView(TemplateView):
         context['amount_note'] = Note.objects.all().count()
         context['amount_note_displayed'] = Note.objects.exclude(is_displayed=False).count()
         context['amount_idea'] = Idea.objects.all().count()
-        context['amount_idea_displayed'] = Idea.objects.filter(tag="DSBJ").exclude(is_displayed=False).count()
+        context['amount_idea_displayed'] = Idea.objects.filter(tag__in=["DSBJ", "GSZS"]).exclude(is_displayed=False).count()
         context['amount_user'] = User.objects.all().count()
         context['amount_user_admin'] = User.objects.exclude(is_admin=False).count()
         return context
