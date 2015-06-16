@@ -15,7 +15,7 @@
                 <small>{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}
                 <span class="glyphicon glyphicon-resize-horizontal"></span>
                 <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
-                <span style="color: #419641">{{ note.category }}</span></small>
+                <div style="text-align: right"><span style="color: #419641">{{ note.category }}</span></div></small>
             </h4>
         {% endfor %}
     {% paginate %}

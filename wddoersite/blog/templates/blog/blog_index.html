@@ -20,10 +20,12 @@
     <div>
         {% autopaginate notes 5 %}
             {% for note in notes %}
-                <h3>
+                <h4>
                     <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
-                </h3>
-                <small style="font-size: 12px">{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+                </h4>
+                <div style="text-align: right">
+                    <small style="font-size: 12px">{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }} <span style="color: #419641">{{ note.category }}</span></small>
+                </div>
                 <p>{{ note.content | truncatechars:198 }} }}</p>
             {% endfor %}
         {% paginate %}
