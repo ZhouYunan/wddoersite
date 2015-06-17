@@ -10,7 +10,7 @@
 {% block content %}
     <h4><strong>本站目前共有{{ amount_ideas }}篇Idea：</strong></h4>
     <hr style=" height:2px;border:none;border-top:2px dotted #FAD232;" />
-    {% autopaginate ideas 20 %}
+    {% autopaginate ideas 10 %}
         {% for idea in ideas %}
             <h4>
                 <small>{{ idea.created_date|date:"Y-m-d" }} {{ idea.created_date|date:"H:i:s" }}
@@ -21,4 +21,5 @@
             </h4>
         {% endfor %}
     {% paginate %}
+    <br />
 {% endblock %}
