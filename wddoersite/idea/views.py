@@ -11,7 +11,7 @@ class IdeaIndexView(ListView):
         context = super(IdeaIndexView, self).get_context_data(**kwargs)
 
         context["amount_ideas"] = Idea.objects.all().count()
-        context["ideas"] = Idea.objects.filter(is_displayed=True, tag__in=["DSBJ", "GSZS", "BCSJ"])
+        context["ideas"] = Idea.objects.filter(is_displayed=True, tag__in=["DSBJ", "GSZS", "BCSY"])
 
         return context
 
