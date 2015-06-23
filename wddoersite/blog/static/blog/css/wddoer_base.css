@@ -1,7 +1,7 @@
 
 
 
-@media screen {
+@media screen and (max-device-width: 600px) {
     body {
         /*background: #ffffff url("../image/background-pictures.jpg");*/
         background-color: #eeeeee;
@@ -79,3 +79,78 @@
     }
 }
 
+body {
+    /*background: #ffffff url("../image/background-pictures.jpg");*/
+    background-color: #eeeeee;
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.navbar-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.col-4-1 {
+    width: 25%;
+    float: left;
+}
+
+.bg-blog {
+    background-color: #1f8dd6;
+    height: 10px;
+}
+
+.bg-idea {
+    background-color: #FAD232;
+    height: 10px;
+}
+
+.bg-stock {
+    background-color: #dd514c;
+    height: 10px;
+}
+
+.bg-about {
+    background-color: #5eb95e;
+    height: 10px;
+}
+
+.wddoer-backtotop {
+    position: fixed;
+    bottom: 25px;
+    right: 50px;
+    text-decoration: none;
+    z-index: 9999;
+    color: #dd514c;
+}
+
+.flo-right {
+    float: right;
+}
+
+.pagination {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.pagination > li {
+    display: inline;
+}
+
+pre {
+    display: block;
+    padding: 12px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #D4CDAB;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #353535;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
