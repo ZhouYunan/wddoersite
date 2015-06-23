@@ -6,72 +6,64 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-xs-9">
-            <h4><a href="{% url "site_index" %}">Return Index</a></h4>
-            <div class="table-responsive">
-                <h5>2015-06-07 16:00:00<span class="glyphicon glyphicon-resize-horizontal"></span>网站上线</h5>
-                <h5>2015-06-07 17:00:00<span class="glyphicon glyphicon-resize-horizontal"></span>发布第一篇博文</h5>
-                <h5>2015-06-08 17:00:00<span class="glyphicon glyphicon-resize-horizontal"></span>标题搜索上线</h5>
-                <h5>2015-06-15 08:00:00<span class="glyphicon glyphicon-resize-horizontal"></span>Idea上线</h5>
-            </div>
-            <hr /><hr />
-
-            <h4 style="text-align: center">欢迎留言</h4>
-            <!-- 多说评论框 start -->
-                <div class="ds-thread" data-thread-key="" data-title="" data-url="}"></div>
-            <!-- 多说评论框 end -->
-            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-                <script type="text/javascript">
-                    var duoshuoQuery = {short_name:"wddoer"};
-                    (function() {
-                        var ds = document.createElement('script');
-                        ds.type = 'text/javascript';ds.async = true;
-                        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                        ds.charset = 'UTF-8';
-                        (document.getElementsByTagName('head')[0]
-                        || document.getElementsByTagName('body')[0]).appendChild(ds);
-                    })();
-                </script>
-            <!-- 多说公共JS代码 end -->
-
+    <div class="col-3">
+        <h4><a href="{% url "site_index" %}">Return Index</a></h4>
+        <div>
+            <p>2015-06-07 16:00:00 网站上线</p>
+            <p>2015-06-07 17:00:00 发布第一篇博文</p>
+            <p>2015-06-08 17:00:00 标题搜索上线</p>
+            <p>2015-06-15 08:00:00 Idea上线</p>
         </div>
-        <div class="col-xs-3">
-            <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
-            <h4>技术链接</h4>
-                <ul><a href="http://www.yinwang.org/" style="text-decoration: none">当然我在扯淡</a></ul>
-                <ul><a href="http://www.liaoxuefeng.com/" style="text-decoration: none">廖雪峰的官方网站</a></ul>
-                <ul><a href="http://dbanotes.net/" style="text-decoration: none">DBA Notes | 闲思录</a></ul>
-                <ul><a href="http://blog.codinglabs.org/" style="text-decoration: none">CodingLabs</a></ul>
-                <ul><a href="http://ibruce.info/" style="text-decoration: none">Bruce Sha</a></ul>
-                <ul><a href="https://www.hackerzhou.me/" style="text-decoration: none">Hackerzhou's Blog</a></ul>
+        <br /><br />
 
-            <hr style=" height:2px;border:none;border-top:2px dotted #dd514c;" />
-            <h4>股票链接</h4>
-                <ul><a href="http://www.liuwenwen.com/" style="text-decoration: none">刘文文股票博客</a></ul>
-
-            <hr style=" height:2px;border:none;border-top:2px dotted #419641;" />
-            <h4>生活链接</h4>
-                <ul><a href="http://cnfeat.com/" style="text-decoration: none">陈素封·独立写生</a></ul>
-
-            <hr style=" height:2px;border:none;border-top:2px dotted #333333;" />
-            <h4>我的链接</h4>
-                <ul><a href="{% url 'user_login' %}" style="text-decoration: none">Login</a></ul>
-                <ul><a href="https://github.com/wddoer" style="text-decoration: none">GitHub</a></ul>
-{#                <ul><a href="http://www.cnblogs.com/wddoer/" style="text-decoration: none">cnBlogs</a></ul>#}
-                <ul><a href="http://www.douban.com/people/59058684/" style="text-decoration: none">douban</a></ul>
-        </div>
+        <p style="text-align: center">欢迎留言</p>
+        <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="" data-title="" data-url="}"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"wddoer"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+        <!-- 多说公共JS代码 end -->
     </div>
 
-    <div class="row"  style="text-align: center">
-        <h5>致谢
+    <hr />
+    <div>
+        <small>
+            友情链接：
+            <a href="http://www.yinwang.org/" style="text-decoration: none">当然我在扯淡</a>
+            <a href="http://www.liaoxuefeng.com/" style="text-decoration: none">廖雪峰的官方网站</a>
+            <a href="http://dbanotes.net/" style="text-decoration: none">DBA Notes | 闲思录</a>
+            <a href="http://blog.codinglabs.org/" style="text-decoration: none">CodingLabs</a>
+            <a href="http://ibruce.info/" style="text-decoration: none">Bruce Sha</a>
+            <a href="https://www.hackerzhou.me/" style="text-decoration: none">Hackerzhou's Blog</a>
+
+            <a href="http://www.liuwenwen.com/" style="text-decoration: none">刘文文股票博客</a>
+
+            <a href="http://cnfeat.com/" style="text-decoration: none">陈素封·独立写生</a>
+
+            <a href="{% url 'user_login' %}" style="text-decoration: none">Login</a>
+            <a href="https://github.com/wddoer" style="text-decoration: none">GitHub</a>
+            <a href="http://www.douban.com/people/59058684/" style="text-decoration: none">douban</a>
+        </small>
+    </div>
+
+    <div style="text-align: center">
+        <small>致谢
             <a href="https://www.djangoproject.com/" style="text-decoration: none">Django1.8</a>|
-            <a href="http://getbootstrap.com/" style="text-decoration: none">Bootstrap3.3.4</a>|
             <a href="https://www.pythonanywhere.com/" style="text-decoration: none">pythonanywhere</a>|
             <script type="text/javascript">
                 var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
                 document.write(unescape("%3Cspan id='cnzz_stat_icon_1255427364'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255427364%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
             </script>
-        </h5>
+        </small>
     </div>
 {% endblock %}

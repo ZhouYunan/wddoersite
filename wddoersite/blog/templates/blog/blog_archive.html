@@ -7,16 +7,17 @@
 
 
 {% block content %}
-    <h4><strong>本站目前共有{{ amount_notes }}篇文章：</strong></h4>
+    <p><strong>本站目前共有{{ amount_notes }}篇文章：</strong></p>
     <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     {% autopaginate note_list 20 %}
         {% for note in note_list %}
-            <h4>
-                <small>{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}
-                <span class="glyphicon glyphicon-resize-horizontal"></span>
-                <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
-                <div style="text-align: right"><span style="color: #419641">{{ note.category }}</span></div></small>
-            </h4>
+            <p>
+                <small>
+                    {{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}
+                    <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
+                    <span style="float: right; color: #419641">{{ note.category }}</span>
+                </small>
+            </p>
         {% endfor %}
     {% paginate %}
 {% endblock %}

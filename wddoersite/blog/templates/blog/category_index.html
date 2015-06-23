@@ -9,17 +9,22 @@
 {% block content %}
     {% for category in categories %}
         <a href="{% url "category_index" category.id %}" style="text-decoration: none">
-            <button class="btn">{{ category.name }}</button>
+            <button>{{ category.name }}</button>
         </a>
     {% endfor %}
     <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     {% autopaginate notes 5 %}
         {% for note in notes %}
-            <h4>
+            <p>
                 <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
-                <small style="float: right; font-size: 12px">{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }} <span style="color: #419641">{{ note.category }}</span></small>
-            </h4>
-            <p>{{ note.content | truncatechars:198 }}</p>
+                <small style="float: right; font-size: 12px">
+                    {{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}
+                    <span style="color: #419641">
+                        {{ note.category }}
+                    </span>
+                </small>
+            </p>
+            <p>{{ note.content | truncatechars:172 }} }}</p>
         {% endfor %}
     {% paginate %}
     <br />

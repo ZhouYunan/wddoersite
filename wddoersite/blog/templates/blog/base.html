@@ -3,41 +3,33 @@
     <head lang="en">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        {% load staticfiles %}
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="{% static 'blog/css/bootstrap-theme.min.css' %}">
-        <!-- https://github.com/icco/pygments-css % http://my.oschina.net/GivingOnenessDestiny/blog/144625 -->
-        <link rel="stylesheet" href="{% static 'blog/css/wddoer_code.css' %}">
-        <!-- base template file -->
-        <link rel="stylesheet" href="{% static 'blog/css/wddoer_base.css' %}">
         <title>
             {% block title_html %}
             {% endblock %}
         </title>
+        {% load staticfiles %}
+        <!-- https://github.com/icco/pygments-css % http://my.oschina.net/GivingOnenessDestiny/blog/144625 -->
+        <link rel="stylesheet" href="{% static 'blog/css/wddoer_code.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/wddoer_base.css' %}">
+        {% block extra_head %}{% endblock %}
     </head>
 
-    <body onload="ShowTime()">
-        <div class="row">
-            <div class="navbar-fixed-top">
-                <a href="{% url 'blog_index' %}"><div class="col-xs-3 bg-blog"></div></a>
-                <a href="{% url 'idea_index' %}"><div class="col-xs-3 bg-idea"></div></a>
-                <a href="{% url 'stock_index' %}"><div class="col-xs-3 bg-stock"></div></a>
-                <a href="{% url 'site_about' %}"><div class="col-xs-3 bg-about"></div></a>
+    <body>
+        <div>
+            <div class="navbar-top">
+                <a href="{% url 'blog_index' %}"><div class="col-4-1 bg-blog"></div></a>
+                <a href="{% url 'idea_index' %}"><div class="col-4-1 bg-idea"></div></a>
+                <a href="{% url 'stock_index' %}"><div class="col-4-1 bg-stock"></div></a>
+                <a href="{% url 'site_about' %}"><div class="col-4-1 bg-about"></div></a>
             </div>
-            <br />
-            <div class="container">
+            <hr />
+            <div>
                 {% block content %}{% endblock %}
             </div>
         </div>
 
         {% load staticfiles %}
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="{% static 'blog/js/jquery-1.11.2.min.js' %}"></script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
-        <!-- my js file defined by wddoer -->
         <script src="{% static 'blog/js/wddoer_base.js' %}"></script>
     </body>
 </html>

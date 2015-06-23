@@ -9,9 +9,6 @@
 {% block content %}
     <div>
         <h1>Welcome</h1>
-{#        <h4>wddoersite is about porgramming and stock</h4>#}
-        <p><a class="btn btn-primary btn-lg" href="{% url 'blog_index' %}" role="button">Jump To Blog</a></p>
-        <p>访问时间：{{ visited_time }}</p>
-        <div id="nowtime"></div>
+        <p>访问时间：{{ visited_time|date:"Y-m-d" }} {{ visited_time|date:"H:i:s" }}</p>
     </div>
 {% endblock %}

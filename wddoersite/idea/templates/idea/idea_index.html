@@ -8,17 +8,15 @@
 
 
 {% block content %}
-    <h4><strong>本站目前共有{{ amount_ideas }}篇Idea：</strong></h4>
+    <p style="text-align: center">本站目前共有{{ amount_ideas }}篇Idea</p>
     <hr style=" height:2px;border:none;border-top:2px dotted #FAD232;" />
     {% autopaginate ideas 10 %}
         {% for idea in ideas %}
-            <h4>
+            <p>
                 <small>{{ idea.created_date|date:"Y-m-d" }} {{ idea.created_date|date:"H:i:s" }}
-                <span class="glyphicon glyphicon-resize-horizontal"></span>
                 <span style="color: #419641">{{ idea.tag }}</span>
-                <span class="glyphicon glyphicon-resize-horizontal"></span>
                 <a href="{% url "idea_detail" idea.id %}" style="text-decoration: none">{{ idea.content|truncatewords:500 }}</a></small>
-            </h4>
+            </p>
         {% endfor %}
     {% paginate %}
     <br />

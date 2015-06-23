@@ -73,4 +73,4 @@ class NoteArchiveView(ListView):
 class NoteFilterView(FilterView):
     template_name = "blog/blog_filter.html"
     filterset_class = NoteFilter
-    queryset = Note.objects.filter(is_displayed=True, category__is_displayed=True).order_by("?")
+    queryset = Note.objects.filter(is_displayed=True, category__is_displayed=True).order_by("-created_date")

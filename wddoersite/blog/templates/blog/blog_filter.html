@@ -6,7 +6,6 @@
 
 
 {% block content %}
-        <h4>从标题中搜索</h4>
         <form action="" method="get">
             {{ filter.form }}
             <button type="submit" class="btn">搜索</button>
@@ -15,12 +14,13 @@
         <div>
             {% autopaginate note_list 5 %}
                 {% for note in note_list %}
-                    <h4>
-                        <small>{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}
-                        <span class="glyphicon glyphicon-resize-horizontal"></span>
-                        <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
-                        <span style="color: #419641">{{ note.category }}</span></small>
-                    </h4>
+                    <p>
+                        <small>
+                            {{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}
+                            <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
+                            <span style="float: right; color: #419641">{{ note.category }}</span>
+                        </small>
+                    </p>
                 {% endfor %}
             {% paginate %}
         </div>
