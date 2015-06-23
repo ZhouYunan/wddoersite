@@ -8,6 +8,7 @@ body {
 .body-row {
     width: 1160px;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 .navbar-top {
