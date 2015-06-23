@@ -5,10 +5,19 @@ body {
     font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "宋体";
 }
 
-.body-row {
-    width: 1160px;
-    margin: 0 auto;
-    max-width: 100%;
+@media screen and (min-device-width: 1160px) {
+    .body-row {
+        width: 1160px;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-device-width: 1160px) {
+    .body-row {
+        margin: 0 auto;
+        max-width: 100%;
+    }
 }
 
 .navbar-top {
