@@ -12,7 +12,7 @@
             <button>{{ category.name }}</button>
         </a>
     {% endfor %}
-    <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
+    <hr />
     {% autopaginate notes 5 %}
         {% for note in notes %}
             <p>
@@ -27,6 +27,6 @@
             <p>{{ note.content | truncatechars:172 }} }}</p>
         {% endfor %}
     {% paginate %}
-    <br />
+    <hr />
 {% endblock %}
 

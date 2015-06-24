@@ -10,7 +10,7 @@
     <a href="/blog/category/5/"><button>博文</button></a>
     <a href="{% url 'real-time' %}"><button>去看全球股市实时显示</button></a>
 
-    <hr style=" height:2px;border:none;border-top:2px dotted #dd514c;" />
+    <hr />
 
     <script src="http://hq.sinajs.cn/list=sh000001" charset="gb2312"></script>
     <script src="http://hq.sinajs.cn/list=sz399001" charset="gb2312"></script>
@@ -30,4 +30,5 @@
             "成交总手：" + sz399001[8] + "|" + "成交金额（元）：" + sh000001[9] + "|" + "当前日期："+sh000001[30] + "|" + "当前时间：" + sz399001[31]
         );
     </script>
+
 {% endblock %}

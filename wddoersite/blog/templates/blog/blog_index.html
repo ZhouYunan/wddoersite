@@ -18,7 +18,7 @@
     <a href="{% url 'blog_archive' %}" class="flo-right"><button>Archive</button></a>
     <a href="{% url 'blog_filter' %}" class="flo-right"><button>Search</button></a>
 
-    <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
+    <hr />
     <div>
         {% autopaginate notes 5 %}
             {% for note in notes %}
@@ -35,5 +35,5 @@
             {% endfor %}
         {% paginate %}
     </div>
-    <br />
+    <hr />
 {% endblock %}

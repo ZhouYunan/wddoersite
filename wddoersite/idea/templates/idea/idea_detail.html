@@ -11,9 +11,8 @@
         {{ idea.tag }}
         <small style="font-size: 12px">{{ idea.created_date|date:"Y-m-d" }} {{ idea.created_date|date:"H:i:s" }}</small>
     </p>
-    <hr style=" height:2px;border:none;border-top:2px dotted #FAD232;" />
+    <hr />
     <div>{{ idea.content }}</div>
-    <br />
 
     <!-- duoshuo comment div start -->
     <div class="ds-thread" data-thread-key="{{ idea.id }}" data-title="{{ idea.created_date }}" data-url="{{ idea.get_absolute_url }}"></div>
@@ -30,5 +29,6 @@
             || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
     </script>
+    <hr />
 
 {% endblock %}

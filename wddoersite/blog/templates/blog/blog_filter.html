@@ -10,7 +10,7 @@
             {{ filter.form }}
             <button type="submit" class="btn">搜索</button>
         </form>
-        <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
+        <hr />
         <div>
             {% autopaginate note_list 5 %}
                 {% for note in note_list %}
@@ -24,4 +24,5 @@
                 {% endfor %}
             {% paginate %}
         </div>
+    <hr />
 {% endblock %}

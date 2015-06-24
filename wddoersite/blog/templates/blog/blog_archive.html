@@ -7,8 +7,8 @@
 
 
 {% block content %}
-    <p><strong>本站目前共有{{ amount_notes }}篇文章：</strong></p>
-    <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
+    <p style="text-align: center">本站目前共有{{ amount_notes }}篇文章</p>
+    <hr />
     {% autopaginate note_list 20 %}
         {% for note in note_list %}
             <p>
@@ -20,4 +20,5 @@
             </p>
         {% endfor %}
     {% paginate %}
+    <hr />
 {% endblock %}

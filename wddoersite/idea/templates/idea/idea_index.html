@@ -9,7 +9,7 @@
 
 {% block content %}
     <p style="text-align: center">本站目前共有{{ amount_ideas }}篇Idea</p>
-    <hr style=" height:2px;border:none;border-top:2px dotted #FAD232;" />
+    <hr />
     {% autopaginate ideas 10 %}
         {% for idea in ideas %}
             <p>
@@ -19,5 +19,5 @@
             </p>
         {% endfor %}
     {% paginate %}
-    <br />
+    <hr />
 {% endblock %}
