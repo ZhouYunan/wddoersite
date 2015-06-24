@@ -49,9 +49,9 @@
 .codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
 .codehilite .sc { color: #BA2121 } /* Literal.String.Char */
 .codehilite .sd { color: #75715E; font-style: italic } /* Literal.String.Doc */
-.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+.codehilite .s2 { color: #FD971F } /* Literal.String.Double */
 .codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.codehilite .sh { color: #FD971F } /* Literal.String.Heredoc */
 .codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
 .codehilite .sx { color: #66d9ef } /* Literal.String.Other */
 .codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
