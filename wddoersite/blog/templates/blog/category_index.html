@@ -13,7 +13,7 @@
         </a>
     {% endfor %}
     <hr />
-    {% autopaginate notes 5 %}
+    {% autopaginate notes 10 %}
         {% for note in notes %}
             <p>
                 <a href="{% url "blog_detail" note.id %}" style="text-decoration: none">{{ note.title }}</a>
