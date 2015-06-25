@@ -20,6 +20,10 @@ class IdeaDetailView(DetailView):
     model = Idea
     template_name = 'idea/idea_detail.html'
 
+    def get_queryset(self):
+        idead = super(IdeaDetailView, self).get_queryset()
+        return idead.filter(is_displayed=True)
+
     def get_context_data(self, **kwargs):
         context = super(IdeaDetailView, self).get_context_data(**kwargs)
         return context

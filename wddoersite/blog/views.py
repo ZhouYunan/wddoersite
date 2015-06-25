@@ -40,6 +40,10 @@ class BlogDetailView(DetailView):
     model = Note
     template_name = 'blog/blog_detail.html'
 
+    def get_queryset(self):
+        bd = super(BlogDetailView, self).get_queryset()
+        return bd.filter(is_displayed=True)
+
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(is_displayed=True)
