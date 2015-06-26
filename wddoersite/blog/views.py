@@ -51,7 +51,7 @@ class BlogDetailView(DetailView):
 
 
 def categoryIndex(request, pk):
-    cate = Category.objects.get(pk=pk)
+    cate = Category.objects.filter(is_displayed=True).get(pk=pk)
     notes = cate.note_set.filter(is_displayed=True, category__is_displayed=True)
     return render_to_response('blog/category_index.html',
         {
