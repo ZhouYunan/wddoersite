@@ -91,3 +91,15 @@ code {
 img {
     max-width: 100%;
 }
+
+blockquote {
+    border-left: 3px solid #D0E5F2;
+    /*font-style: normal;*/
+    padding: 0 0 0 8px;
+    display: block;
+    line-height: 22px;
+    vertical-align: baseline;
+    font-size: 100%;
+    margin: .8em 0;
+    font-style: inherit;
+}
