@@ -1,4 +1,5 @@
 {% extends "iadmin/base.html" %}
+{% load pagination_tags %}
 
 
 {% block blog_admin %}
@@ -20,6 +21,8 @@
         <div class="pure-u-1-8"><a href="{% url 'note_admin_index' %}">文章列表</a></div>
         <div class="pure-u-1-8"><a href="{% url 'note_create' %}">新增文章</a></div>
     </div>
+
+    {% autopaginate notes 10 %}
     <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     <div>
         <table>
@@ -37,14 +40,14 @@
                 </tr>
             </thead>
             <tbody>
-                {% for note in note_list %}
+                {% for note in notes %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
                         <td>{{ note.id }}</td>
                         <td><a href="{% url 'note_update' note.id %}">Update</a></td>
-                        <td>{{ note.title|truncatechars:25 }}</td>
+                        <td>{{ note.title|truncatechars:15 }}</td>
                         <td>{{ note.category }}</td>
-                        <td>{{ note.content|truncatechars:60 }}</td>
+                        <td>{{ note.content|truncatechars:30 }}</td>
                         <td>{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}</td>
                         <td>{{ note.is_displayed }}</td>
                         <td><a href="{% url 'note_delete' note.id %}">Delete</a></td>
@@ -54,6 +57,8 @@
         </table>
     </div>
     <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
+    {% paginate %}
+
     <div>
         <p>注1：点击<strong>是否编辑</strong>修改相应的文章详情</p>
         <p>注2：点击<strong>是否删除</strong>可从数据库彻底删除数据</p>

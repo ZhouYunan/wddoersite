@@ -10,7 +10,7 @@
 {% block content %}
     <p style="text-align: center">本站目前共有{{ amount_ideas }}篇Idea</p>
     <hr />
-    {% autopaginate ideas 10 %}
+    {% autopaginate ideas 5 %}
         {% for idea in ideas %}
             <p>
                 <small>{{ idea.created_date|date:"Y-m-d" }} {{ idea.created_date|date:"H:i:s" }}

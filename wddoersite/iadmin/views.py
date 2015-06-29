@@ -78,6 +78,7 @@ class NoteAdminView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(NoteAdminView, self).get_context_data(**kwargs)
+        context["notes"] = Note.objects.order_by("id")
         return context
 
 
