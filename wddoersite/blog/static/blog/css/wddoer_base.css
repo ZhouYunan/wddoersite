@@ -81,11 +81,12 @@ pre {
 }
 
 code {
-  /*padding: 2px 4px;*/
-  font-size: 100%;
-  color: #62515f;
-  background-color: #f4f4f4;
-  /*border-radius: 4px;*/
+    /*padding: 2px 4px;*/
+    width: 100%;
+    font-size: 100%;
+    color: #62515f;
+    background-color: #f4f4f4;
+    /*border-radius: 4px;*/
 }
 
 img {
@@ -103,3 +104,4 @@ blockquote {
     margin: .8em 0;
     font-style: inherit;
 }
+

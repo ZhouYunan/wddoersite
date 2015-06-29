@@ -19,7 +19,9 @@
         <small style="float: right; font-size: 12px">{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }} <span style="color: #419641">{{ note.category }}</span></small>
     </p>
     <hr />
-    <div>{{ note.content | markdown:"safe, code-friendly, code-color" }}</div>
+{#    https://github.com/trentm/python-markdown2/wiki/Extras#}
+{#    <div>{{ note.content | markdown:"code-friendly, code-color: noclasses|linenos" }}</div>#}
+    <div>{{ note.content | markdown:"code-friendly, code-color: linenos" }}</div>
 
 
     <!-- 多说评论框 start -->

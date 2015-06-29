@@ -42,6 +42,8 @@ INSTALLED_APPS = (
     'wddoersite.blog_pagination',
     'wddoersite.stock',
     'wddoersite.idea',
+    # install django-markdown2 for formatting my blog note content from https://github.com/trentm/python-markdown2 & https://github.com/svetlyak40wt/django-markdown2/
+    # install Pygments for highlighting codes in my blog note from http://pygments.org/
 )
 
 MIDDLEWARE_CLASSES = (

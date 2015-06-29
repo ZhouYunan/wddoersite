@@ -43,5 +43,6 @@
         {% load staticfiles %}
         <script src="{% static 'blog/js/jquery-1.11.2.min.js' %}"></script>
         <script src="{% static 'blog/js/wddoer_base.js' %}"></script>
+        <script>{% block wddoer_js %}{% endblock %}</script>
     </body>
 </html>

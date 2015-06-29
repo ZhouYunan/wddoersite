@@ -24,8 +24,9 @@
     <div id="main">
         {% block content %}{% endblock %}
     </div>
-    {% block wddoer_js %}{% endblock %}
+
     {% load staticfiles %}
     <script src="{% static 'iadmin/js/jquery-1.11.2.min.js' %}"></script>
+    <script>{% block admin_js %}{% endblock %}</script>
 </body>
 </html>
