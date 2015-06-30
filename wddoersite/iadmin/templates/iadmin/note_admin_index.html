@@ -22,7 +22,7 @@
         <div class="pure-u-1-8"><a href="{% url 'note_create' %}">新增文章</a></div>
     </div>
 
-    {% autopaginate notes 10 %}
+    {% autopaginate notes 20 %}
     <hr style=" height:2px;border:none;border-top:2px dotted #1f8dd6;" />
     <div>
         <table>
@@ -45,7 +45,7 @@
                         <td>{{ forloop.counter }}</td>
                         <td>{{ note.id }}</td>
                         <td><a href="{% url 'note_update' note.id %}">Update</a></td>
-                        <td>{{ note.title|truncatechars:15 }}</td>
+                        <td>{{ note.title|truncatechars:35 }}</td>
                         <td>{{ note.category }}</td>
                         <td>{{ note.content|truncatechars:30 }}</td>
                         <td>{{ note.created_date|date:"Y-m-d" }} {{ note.created_date|date:"H:i:s" }}</td>

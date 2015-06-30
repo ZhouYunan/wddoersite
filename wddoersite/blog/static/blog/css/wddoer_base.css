@@ -110,6 +110,22 @@ a {
 
 }
 
+a:link {
+ color: rgba(31, 141, 214, 0.69); /*连接默认的颜色变化*/
+}
+
+a:hover {
+ color: #1f8dd6; /*鼠标经过的颜色变化*/
+}
+
+a:visited {
+ color: rgba(31, 141, 214, 0.69); /*连接访问的颜色变化*/
+}
+
+a:active {
+ color: #1f8dd6; /*鼠标按下的颜色变化*/
+}
+
 footer {
      width: 100%;
     text-align: center;
