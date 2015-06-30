@@ -34,4 +34,4 @@ class IdeaIndexView(ListView):
 class IdeaFilterView(FilterView):
     template_name = "idea/idea_filter.html"
     filterset_class = IdeaFilter
-    queryset = Idea.objects.filter(is_displayed=True).order_by("-created_date")
+    queryset = Idea.objects.filter(is_displayed=True, tag__in=["DSBJ", "GSZS", "BCSY"]).order_by("-created_date")
