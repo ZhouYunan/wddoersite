@@ -31,7 +31,7 @@ class BlogIndexView(ListView):
         context = super(BlogIndexView, self).get_context_data(**kwargs)
 
         context['categories'] = Category.objects.filter(is_displayed=True)
-        context['notes'] = Note.objects.filter(is_displayed=True, category__is_displayed=True)
+        context['notes'] = Note.objects.filter(is_displayed=True, category__is_displayed=True).order_by("-created_date")
 
         return context
 

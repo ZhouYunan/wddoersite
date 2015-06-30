@@ -1,14 +1,24 @@
 {% extends "blog/base.html" %}
 {% load pagination_tags %}
+
 {% block title_html %}
     搜索文章标题
+{% endblock %}
+
+{% block extra_head %}
+    <style>
+        footer {
+            bottom: 0;
+            position: fixed
+        }
+    </style>
 {% endblock %}
 
 
 {% block content %}
         <form action="" method="get">
             {{ filter.form }}
-            <button type="submit" class="btn">搜索</button>
+            <button type="submit">搜索</button>
         </form>
         <hr />
         <div>

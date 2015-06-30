@@ -23,6 +23,9 @@
 {#    <div>{{ note.content | markdown:"code-friendly, code-color: noclasses|linenos" }}</div>#}
     <div>{{ note.content | markdown:"code-friendly, code-color" }}</div>
 
+    <p style="text-align: center; font-style: italic">欢迎留言</p>
+    <hr />
+
 
     <!-- 多说评论框 start -->
     <div class="ds-thread" data-thread-key="{{ note.id }}" data-title="{{ note.title }}" data-url="{{ note.get_absolute_url }}"></div>

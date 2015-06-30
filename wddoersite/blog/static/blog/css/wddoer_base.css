@@ -105,3 +105,12 @@ blockquote {
     font-style: inherit;
 }
 
+a {
+    text-decoration: none;
+
+}
+
+footer {
+     width: 100%;
+    text-align: center;
+}

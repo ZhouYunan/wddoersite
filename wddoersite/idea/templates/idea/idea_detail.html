@@ -14,21 +14,21 @@
     <hr />
     <div>{{ idea.content }}</div>
 
-    <!-- duoshuo comment div start -->
-    <div class="ds-thread" data-thread-key="{{ idea.id }}" data-title="{{ idea.created_date }}" data-url="{{ idea.get_absolute_url }}"></div>
-    <!-- duoshuo comment div end -->
-
-    <script type="text/javascript">
-        var duoshuoQuery = {short_name:"wddoer"};
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';ds.async = true;
-            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-            || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-    </script>
+{#    <!-- duoshuo comment div start -->#}
+{#    <div class="ds-thread" data-thread-key="{{ idea.id }}" data-title="{{ idea.created_date }}" data-url="{{ idea.get_absolute_url }}"></div>#}
+{#    <!-- duoshuo comment div end -->#}
+{##}
+{#    <script type="text/javascript">#}
+{#        var duoshuoQuery = {short_name:"wddoer"};#}
+{#        (function() {#}
+{#            var ds = document.createElement('script');#}
+{#            ds.type = 'text/javascript';ds.async = true;#}
+{#            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';#}
+{#            ds.charset = 'UTF-8';#}
+{#            (document.getElementsByTagName('head')[0]#}
+{#            || document.getElementsByTagName('body')[0]).appendChild(ds);#}
+{#        })();#}
+{#    </script>#}
     <hr />
 
 {% endblock %}

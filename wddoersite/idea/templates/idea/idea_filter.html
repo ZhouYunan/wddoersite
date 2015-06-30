@@ -3,16 +3,18 @@
 
 
 {% block title_html %}
-    wddoersite-idea
+    search idea content
 {% endblock %}
 
 
 {% block content %}
-    <p style="text-align: center">本站目前共有{{ amount_ideas_displayed }}篇开放Idea</p>
-    <a href="{% url 'idea_filter' %}" class="flo-right"><button>Search</button></a><br />
+    <form action="" method="get">
+        {{ filter.form }}
+        <button type="submit">搜索</button>
+    </form>
     <hr />
-    {% autopaginate ideas 10 %}
-        {% for idea in ideas %}
+    {% autopaginate idea_list 10 %}
+        {% for idea in idea_list %}
             <p>
                 {{ idea.created_date|date:"Y-m-d" }} {{ idea.created_date|date:"H:i:s" }}
                 <span style="color: #419641">{{ idea.tag }}</span>
