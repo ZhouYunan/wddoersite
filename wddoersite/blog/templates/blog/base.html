@@ -54,8 +54,8 @@
         $('body').show();
         $('.version').text(NProgress.version);
         NProgress.start();
-        NProgress.done();
-{#        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 800);#}
+{#        NProgress.done();#}
+        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 800);
 
         $("#b-0").click(function() { NProgress.start(); });
         $("#b-40").click(function() { NProgress.set(0.4); });
