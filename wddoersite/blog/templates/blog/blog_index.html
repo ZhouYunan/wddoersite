@@ -9,17 +9,6 @@
 
 
 {% block content %}
-    {% for category in categories %}
-        <a href="{% url "category_index" category.id %}" style="text-decoration: none">
-            <button>{{ category.name }}
-            </button>
-        </a>
-    {% endfor %}
-
-    <a href="{% url 'blog_archive' %}" class="flo-right"><button>Archive</button></a>
-    <a href="{% url 'blog_filter' %}" class="flo-right"><button>Search</button></a>
-
-    <hr />
     <div>
         {% autopaginate notes 9 %}
             {% for note in notes %}
@@ -35,5 +24,13 @@
             {% endfor %}
         {% paginate %}
     </div>
+
+    Category:{% for category in categories %}
+        <a href="{% url "category_index" category.id %}" style="text-decoration: none">
+            {{ category.name }}
+        </a>
+    {% endfor %}
+    <a href="{% url 'blog_archive' %}" class="flo-right">Archive</a>
+    <a href="{% url 'blog_filter' %}" class="flo-right">Search</a>
     <hr />
 {% endblock %}

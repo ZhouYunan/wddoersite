@@ -8,9 +8,6 @@
 
 
 {% block content %}
-    <p style="text-align: center">本站目前共有{{ amount_ideas_displayed }}篇开放Idea</p>
-    <a href="{% url 'idea_filter' %}" class="flo-right"><button>Search</button></a><br />
-    <hr />
     {% autopaginate ideas 10 %}
         {% for idea in ideas %}
             <p>
@@ -21,5 +18,7 @@
             </p>
         {% endfor %}
     {% paginate %}
+    <span style="text-align: center">备注：本站目前共有{{ amount_ideas_displayed }}篇开放Idea</span>
+    <a href="{% url 'idea_filter' %}" class="flo-right">Full Text Search</a><br />
     <hr />
 {% endblock %}

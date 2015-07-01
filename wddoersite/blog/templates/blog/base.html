@@ -11,16 +11,19 @@
         <!-- https://github.com/icco/pygments-css % http://my.oschina.net/GivingOnenessDestiny/blog/144625 -->
         <link rel="stylesheet" href="{% static 'blog/css/wddoer_code.css' %}">
         <link rel="stylesheet" href="{% static 'blog/css/wddoer_base.css' %}">
+        <!-- https://github.com/rstacruz/nprogress -->
+        <link rel="stylesheet" href="{% static 'blog/css/nprogress.css' %}">
+        <script src="{% static 'blog/js/nprogress.js' %}"></script>
         {% block extra_head %}{% endblock %}
     </head>
 
     <body>
         <div class="body-row">
-            <div class="navbar-top">
-                <a href="{% url 'blog_index' %}"><div class="col-4-1 bg-blog"></div></a>
-                <a href="{% url 'idea_index' %}"><div class="col-4-1 bg-idea"></div></a>
-                <a href="{% url 'stock_index' %}"><div class="col-4-1 bg-stock"></div></a>
-                <a href="{% url 'site_about' %}"><div class="col-4-1 bg-about"></div></a>
+            <div class="navbar">
+                <a href="{% url 'blog_index' %}">Blog</a>
+                <a href="{% url 'idea_index' %}">Idea</a>
+                <a href="{% url 'stock_index' %}">Stock</a>
+                <a href="{% url 'site_about' %}">About</a>
             </div>
             <hr />
             <div>
@@ -46,5 +49,18 @@
         <script src="{% static 'blog/js/jquery-1.11.2.min.js' %}"></script>
         <script src="{% static 'blog/js/wddoer_base.js' %}"></script>
         <script>{% block wddoer_js %}{% endblock %}</script>
+
+    <script>
+        $('body').show();
+        $('.version').text(NProgress.version);
+        NProgress.start();
+        NProgress.done();
+{#        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 800);#}
+
+        $("#b-0").click(function() { NProgress.start(); });
+        $("#b-40").click(function() { NProgress.set(0.4); });
+        $("#b-inc").click(function() { NProgress.inc(); });
+        $("#b-100").click(function() { NProgress.done(); });
+    </script>
     </body>
 </html>
