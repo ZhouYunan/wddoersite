@@ -1,9 +1,7 @@
 # coding:utf-8
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.views.generic import ListView, DetailView, TemplateView, YearArchiveView, CreateView
+from django.views.generic import ListView, DetailView, TemplateView
 from django_filters.views import FilterView
 from models import Note, Category
 from datetime import datetime
@@ -31,7 +29,7 @@ class BlogIndexView(ListView):
         context = super(BlogIndexView, self).get_context_data(**kwargs)
 
         context['categories'] = Category.objects.filter(is_displayed=True)
-        context['notes'] = Note.objects.filter(is_displayed=True, category__is_displayed=True).order_by("-created_date")
+        context['notes'] = Note.objects.exclude(category__id=5).filter(is_displayed=True, category__is_displayed=True).order_by("-created_date")    #博客首页过滤掉stock分类下的文章
 
         return context
 
