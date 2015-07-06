@@ -54,13 +54,18 @@
         $('body').show();
         $('.version').text(NProgress.version);
         NProgress.start();
-        NProgress.done();
-{#        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 800);#}
+{#        NProgress.done();#}
+{#        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 300);#}
+
+        jQuery(window).load(function () {
+            NProgress.done();
+        });
 
         $("#b-0").click(function() { NProgress.start(); });
         $("#b-40").click(function() { NProgress.set(0.4); });
         $("#b-inc").click(function() { NProgress.inc(); });
         $("#b-100").click(function() { NProgress.done(); });
     </script>
+
     </body>
 </html>
