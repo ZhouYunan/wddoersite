@@ -29,7 +29,7 @@ class BlogIndexView(ListView):
         context = super(BlogIndexView, self).get_context_data(**kwargs)
 
         context['categories'] = Category.objects.filter(is_displayed=True)
-        context['notes'] = Note.objects.exclude(category__id__in=[5, 8]).filter(is_displayed=True, category__is_displayed=True).order_by("-created_date")    #博客首页过滤掉stock和reprint分类下的文章
+        context['notes'] = Note.objects.exclude(category__id__in=[5, 8, 9]).filter(is_displayed=True, category__is_displayed=True).order_by("-created_date")    #博客首页过滤掉stock, reprint, life分类下的文章
 
         return context
 
